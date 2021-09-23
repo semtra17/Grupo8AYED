@@ -1,0 +1,99 @@
+# depslib dependency file v1.0
+1631910703 source:e:\documentos\facultad\algoritmo y estructuras\algoritmos1\bodega.cpp
+
+1631899343 source:e:\documentos\facultad\algoritmo y estructuras\algoritmos1\direccion.cpp
+	"Direccion.h"
+
+1631899356 e:\documentos\facultad\algoritmo y estructuras\algoritmos1\direccion.h
+	<stdio.h>
+	<string.h>
+
+1631838662 source:e:\documentos\facultad\algoritmo y estructuras\algoritmos1\lista.cpp
+	"Lista.h"
+	<iostream>
+
+1631837718 e:\documentos\facultad\algoritmo y estructuras\algoritmos1\lista.h
+
+1632105013 source:e:\documentos\facultad\algoritmo y estructuras\algoritmos1\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	"Lista.h"
+	"ListaUsuario.h"
+	"Usuario.h"
+
+1632094531 e:\documentos\facultad\algoritmo y estructuras\algoritmos1\listausuario.h
+	"Usuario.h"
+
+1632090406 e:\documentos\facultad\algoritmo y estructuras\algoritmos1\usuario.h
+	<stdio.h>
+	<string.h>
+	"Usuario.h"
+	"Direccion.h"
+
+1631908380 source:e:\documentos\facultad\algoritmo y estructuras\algoritmos1\seleccionmensual.cpp
+	"SeleccionMensual.h"
+
+1632090575 e:\documentos\facultad\algoritmo y estructuras\algoritmos1\seleccionmensual.h
+
+1632091314 source:e:\documentos\facultad\algoritmo y estructuras\algoritmos1\usuario.cpp
+	"Usuario.h"
+
+1631909239 source:e:\documentos\facultad\algoritmo y estructuras\algoritmos1\vino.cpp
+
+1632105109 source:e:\documentos\facultad\algoritmo y estructuras\algoritmos1\listausuario.cpp
+	"ListaUsuario.h"
+	"Usuario.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+
+1631910703 source:c:\users\luciano\desktop\algoritmos1\bodega.cpp
+
+1631899343 source:c:\users\luciano\desktop\algoritmos1\direccion.cpp
+	"Direccion.h"
+
+1631899356 c:\users\luciano\desktop\algoritmos1\direccion.h
+	<stdio.h>
+	<string.h>
+
+1631838662 source:c:\users\luciano\desktop\algoritmos1\lista.cpp
+	"Lista.h"
+	<iostream>
+
+1631837718 c:\users\luciano\desktop\algoritmos1\lista.h
+
+1632267290 source:c:\users\luciano\desktop\algoritmos1\listausuario.cpp
+	"ListaUsuario.h"
+	"Usuario.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+
+1632267278 c:\users\luciano\desktop\algoritmos1\listausuario.h
+	"Usuario.h"
+
+1632267047 c:\users\luciano\desktop\algoritmos1\usuario.h
+	<stdio.h>
+	<string.h>
+	"Usuario.h"
+	"Direccion.h"
+
+1632269087 source:c:\users\luciano\desktop\algoritmos1\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	"Lista.h"
+	"ListaUsuario.h"
+	"Usuario.h"
+
+1631908380 source:c:\users\luciano\desktop\algoritmos1\seleccionmensual.cpp
+	"SeleccionMensual.h"
+
+1632090575 c:\users\luciano\desktop\algoritmos1\seleccionmensual.h
+
+1632266789 source:c:\users\luciano\desktop\algoritmos1\usuario.cpp
+	"Usuario.h"
+
+1631909239 source:c:\users\luciano\desktop\algoritmos1\vino.cpp
+
