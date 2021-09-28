@@ -19,9 +19,9 @@ int main()
     printListaUsuario(LISTA_USUARIOS);
 
 //    string palabra;
-//    string jejox = "   deasd asdasd    ";
+//    string jejox = "	San Martin 549, La Puerta, Catamarca            ";
 //    jejox = eliminarEspaciosDelComienzoYFinal(jejox);
-//    cout <<  jejox << endl;
+
 
 
 

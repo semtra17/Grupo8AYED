@@ -44,8 +44,8 @@ NodoUsuario* cargarNodoUsuarioConArchivo(string line){
 
         stringstream ss(line);
         getline(ss, auxId_usuario, '-');
-        id_usuario = eliminarEspaciosDelComienzoYFinal(id_usuario);
-        cout <<"Informacion obtenida de archivo : "<<  &id_usuario << endl;
+        id_usuario = eliminarEspaciosDelComienzoYFinal(auxId_usuario);
+
         getline(ss, auxNombrApellido, '-');
         nombrApellido = eliminarEspaciosDelComienzoYFinal(auxNombrApellido);
         getline(ss, auxDireccion, '-');
@@ -53,9 +53,7 @@ NodoUsuario* cargarNodoUsuarioConArchivo(string line){
         getline(ss, aux, '-');
         edad= stoi(aux);
 
-         cout <<"Informacion obtenida de archivo : "<<  id_usuario << endl;
-         cout <<"Informacion obtenida de archivo : "<<  direccion << endl;
-         cout <<"Informacion obtenida de archivo : "<<  nombrApellido << endl;
+
 
 
         Usuario *u = crearUsuarioConId(id_usuario,nombrApellido,edad,direccion);

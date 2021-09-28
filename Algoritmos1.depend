@@ -63,7 +63,7 @@
 
 1631837718 c:\users\luciano\desktop\algoritmos1\lista.h
 
-1632784036 source:c:\users\luciano\desktop\algoritmos1\listausuario.cpp
+1632787465 source:c:\users\luciano\desktop\algoritmos1\listausuario.cpp
 	"ListaUsuario.h"
 	"Funciones.h"
 	"Usuario.h"
@@ -82,7 +82,7 @@
 	"Direccion.h"
 	<string>
 
-1632780967 source:c:\users\luciano\desktop\algoritmos1\main.cpp
+1632788936 source:c:\users\luciano\desktop\algoritmos1\main.cpp
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -102,7 +102,7 @@
 
 1631909239 source:c:\users\luciano\desktop\algoritmos1\vino.cpp
 
-1632780589 source:c:\users\luciano\desktop\algoritmos1\funciones.cpp
+1632788965 source:c:\users\luciano\desktop\algoritmos1\funciones.cpp
 	"Funciones.h"
 	<cstring>
 	<iostream>
