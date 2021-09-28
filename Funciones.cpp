@@ -15,48 +15,44 @@ string eliminarEspaciosDelComienzoYFinal(string cadena){
         char auxCadena[40];
         char subCadena[40];
         char espacio = ' ';
-        bool flag = false;
+        int i = 0, tamanio = 0, j= 0;
+
         string palabra;
+//Elimino los espacios al principio de la cadena
+        while(i < cadena.length()){
 
-
-        for(int i = 0; i< cadena.length(); i++) {
-            letra = cadena[i];
-            if(letra != espacio){
-                posComienzo++;
-                break;
+          if(cadena[i] != espacio){
+                i = cadena.length() +  1;
             }
-
-            posComienzo= i;
+           posComienzo++;
         }
 
-//        cout << "Flag: " << cadena << endl;
-        if(posComienzo != 0){
-            for(int i = 0; i< cadena.length(); i++) {
-                auxCadena[i] = cadena[posComienzo++];
+         for(int i = 0; i< cadena.length(); i++) {
+            fflush(stdin);
+            auxCadena[i] = cadena[posComienzo++];
+        }
+
+
+
+//Elimino los espacios al final de la cadena
+        tamanio = strlen(auxCadena) -1 ;
+        while(j == 0){
+          if(auxCadena[tamanio] != espacio){
+                posFinal = tamanio;
+                j = 1;
             }
+           tamanio--;
         }
 
-//        cout << "Flag: " << auxCadena << endl;
-//        cout << "Flag: " << auxCadena[0] << endl;
-
-//        cout <<"Palabra ya limpia : "<<  auxCadena << endl;
-        for(int i = strlen(auxCadena) - 1; i > 0 ; i--) {
-
-                letra = auxCadena[i];
-                if(letra != espacio){
-                    break;
-                }
-
-                posFinal= i;
+//        cout << "Palabra: "<< auxCadena[posFinal-5] << endl;
+        cout << "Palabra: "<< auxCadena[posFinal] << endl;
+        for(int i = 0; i<=posFinal; i++) {
+            subCadena[i] = auxCadena[i];
         }
 
-         if(posFinal != 0 ){
-            for(int i = 0; i<posFinal; i++) {
-                subCadena[i] = auxCadena[i];
-            }
-        }
+
         palabra = subCadena;
-//     cout <<"Palabra ya limpia : "<<  palabra << endl;
+
 
 
 

@@ -43,17 +43,13 @@ NodoUsuario* cargarNodoUsuarioConArchivo(string line){
 
 
         stringstream ss(line);
-        getline(ss, auxId_usuario, '-');
-        id_usuario = eliminarEspaciosDelComienzoYFinal(auxId_usuario);
-
+        getline(ss, id_usuario, '-');
         getline(ss, auxNombrApellido, '-');
         nombrApellido = eliminarEspaciosDelComienzoYFinal(auxNombrApellido);
         getline(ss, auxDireccion, '-');
         direccion = eliminarEspaciosDelComienzoYFinal(auxDireccion);
         getline(ss, aux, '-');
         edad= stoi(aux);
-
-
 
 
         Usuario *u = crearUsuarioConId(id_usuario,nombrApellido,edad,direccion);

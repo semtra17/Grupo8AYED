@@ -18,9 +18,6 @@ int main()
     cargarListaUsuarioDesdeArchivo(LISTA_USUARIOS);
     printListaUsuario(LISTA_USUARIOS);
 
-//    string palabra;
-//    string jejox = "	San Martin 549, La Puerta, Catamarca            ";
-//    jejox = eliminarEspaciosDelComienzoYFinal(jejox);
 
 
 
