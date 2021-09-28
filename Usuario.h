@@ -4,26 +4,27 @@
 #include <string.h>
 #include "Usuario.h"
 #include "Direccion.h"
-
+#include <string>
+using namespace std;
 
 struct Usuario{
-    char id_usuario[6];
-    char nombreYapellido[50];
+    std::string id_usuario;
+    std::string nombreYapellido;
     int edad;
-    char direccion[40];
+    std::string  direccion;
 };
 
 
-Usuario* crearUsuario(char nombreYapellido[50], int edad,char direccion[40]);
-Usuario* crearUsuarioConId(int id_usuario, char nombreYapellido[50], int edad, char direccion[40]);
-char *getIdUsuario(Usuario *usuario);
-char *getNombreYapellido(Usuario *usuario);
-char *getDireccion(Usuario *usuario);
+Usuario* crearUsuario(string nombreYapellido, int edad,string direccion);
+Usuario* crearUsuarioConId(string id_usuario, string nombreYapellido, int edad, string direccion);
+string getIdUsuario(Usuario *usuario);
+string getNombreYapellido(Usuario *usuario);
+string getDireccion(Usuario *usuario);
 int getEdad(Usuario *usuario);
 
-void setDireccion(Usuario *usuario, char direccion[40]);
-void setIdUsuario(Usuario *usuario, char id_usuario[6]);
-void setNombreYapellido(Usuario * usuario, char nombreYapellido[50]);
+void setDireccion(Usuario *usuario, string direccion);
+void setIdUsuario(Usuario *usuario, string id_usuario);
+void setNombreYapellido(Usuario * usuario, string nombreYapellido);
 void setEdad(Usuario * usuario, int edad);
 
 #endif // USUARIO_H_INCLUDED

@@ -1,9 +1,12 @@
 #include "ListaUsuario.h"
+#include "Funciones.h"
 #include "Usuario.h"
 #include <fstream>
 #include<stdlib.h>
 #include <iostream>
-using namespace std;
+#include <sstream>
+using std::cout; using std::cin;
+using std::endl; using std::string;
 
 
 
@@ -12,7 +15,7 @@ void printListaUsuario(ListaUsuario* list){
     NodoUsuario* n = list->primerUsuario;
     while (n != NULL) {
         cout << "Id Usuario: " << n->elementoUsuario->id_usuario << endl;
-        cout << n->elementoUsuario->nombreYapellido << "  Edad: " << n->elementoUsuario->edad << endl ;
+        cout << "Nombre y apellido: " << n->elementoUsuario->nombreYapellido << endl << "Edad: " << n->elementoUsuario->edad << endl ;
         cout << "Direccion: " << n->elementoUsuario->direccion << endl ;
         cout << "=======================================" << endl;
         n = n->siguienteUsuario;
@@ -22,119 +25,94 @@ void printListaUsuario(ListaUsuario* list){
 
 
 
-//NodoUsuario* cargarNodoUsuarioConArchivo(char renglonArchivo[]){
-//            fflush(stdin);
-//            int tamanio = 0, i=0, j=0;
-//            tamanio=strlen(renglonArchivo);
-//            char id_usuario[6];
-//            char auxEdad[6];
-//            char nombreYapellido[40];
-//            int edad;
-//            char direccion[40];
-//
-//            int separadores[7];
-//            int contSeparadores = 0;
-////Encuentro cada separador en el archivo txt y guardo su posicion en separadores
-////Tambien cuento los separadores
-//        for (i=0;i<tamanio;i++){
-//            if(renglonArchivo[i]=='/'){
-//                separadores[contSeparadores] = i;
-//                contSeparadores++;
-//            }
-//        }
-//
-//            contSeparadores++;
-//            separadores[contSeparadores- 1] = tamanio;
-//                            cout << "========================"<< endl;
-//
-//
-//            for (i=0;i<contSeparadores;i++){
-//                int posLetra = 0;
-//
-//                switch(i){
-//                    case 0:
-//                        for(j=0;j<separadores[i];j++){
-//                            fflush(stdin);
-//                            id_usuario[j] = renglonArchivo[j];
-//                        }
-//
-//                    break;
-//
-//                    case 1:
-//                        for(j=separadores[i - 1] + 1;j<separadores[i];j++){
-//                            fflush(stdin);
-//                            nombreYapellido[posLetra] = renglonArchivo[j];
-//                            posLetra++;
-//                        }
-//                    break;
-//
-//                    case 2:
-//                        for(j=separadores[i - 1]+1;j<separadores[i];j++){
-//                            fflush(stdin);
-//                            direccion[posLetra] = renglonArchivo[j];
-//                            posLetra++;
-//                        }
-//                    break;
-//
-//                    case 3:
-//
-//                            for(j=separadores[i - 1]+1;j<separadores[i];j++){
-//                                  fflush(stdin);
-//                                auxEdad[posLetra] = renglonArchivo[j];
-//                                posLetra++;
-//                            }
-//                            edad = atoi(auxEdad);
-//                    break;
-//
-//
-//
-//                }
-//
-//            }
-//        Usuario *usuario = crearUsuarioConId(id_usuario,nombreYapellido,edad,direccion);
-//        NodoUsuario* n= new NodoUsuario();
-//
-//        n->elementoUsuario= usuario;
-//        n->siguienteUsuario=NULL;
-//
-//    return n;
-//}
+NodoUsuario* cargarNodoUsuarioConArchivo(string line){
 
 
-//
-//void cargarListaUsuarioDesdeArchivo(ListaUsuario* list){
-//
-//    char renglon[300]=" ";
-//
-//    NodoUsuario* ultimoNodo;
-//    NodoUsuario* anteriorNodo;
-//
-//
-//    ifstream archivo ("usuarios.txt");
-//
-//        while(!archivo.eof()){
-//
-//            archivo.getline(renglon,300);
-//
-//            ultimoNodo=cargarNodoUsuarioConArchivo(renglon);
-//
-//            if(list->tamanioLista==0){
-//
-//                list->primerUsuario=ultimoNodo;
-//            }
-//            else{
-//
-//                anteriorNodo->siguienteUsuario=ultimoNodo;
-//            }
-//
-//            list->tamanioLista++;
-//            anteriorNodo=ultimoNodo;
-//
-//        }
-//
-//    archivo.close();
-//
-//}
+//        cout << "===============================" << endl;
+//        cout <<"Informacion obtenida de archivo : "<<  line << endl;
+        string auxNombrApellido;
+        string auxId_usuario;
+        string auxDireccion;
+        string nombrApellido;
+        string id_usuario;
+        string direccion;
+        string aux;
+        string palabra;
+        int edad = 0;
+
+
+
+        stringstream ss(line);
+        getline(ss, auxId_usuario, '-');
+        id_usuario = eliminarEspaciosDelComienzoYFinal(id_usuario);
+        cout <<"Informacion obtenida de archivo : "<<  &id_usuario << endl;
+        getline(ss, auxNombrApellido, '-');
+        nombrApellido = eliminarEspaciosDelComienzoYFinal(auxNombrApellido);
+        getline(ss, auxDireccion, '-');
+        direccion = eliminarEspaciosDelComienzoYFinal(auxDireccion);
+        getline(ss, aux, '-');
+        edad= stoi(aux);
+
+         cout <<"Informacion obtenida de archivo : "<<  id_usuario << endl;
+         cout <<"Informacion obtenida de archivo : "<<  direccion << endl;
+         cout <<"Informacion obtenida de archivo : "<<  nombrApellido << endl;
+
+
+        Usuario *u = crearUsuarioConId(id_usuario,nombrApellido,edad,direccion);
+
+
+        NodoUsuario* n = new NodoUsuario();
+        n->elementoUsuario = u;
+        n->siguienteUsuario = NULL;
+
+
+
+
+    return n;
+}
+
+
+
+void cargarListaUsuarioDesdeArchivo(ListaUsuario* list){
+
+
+    NodoUsuario* ultimoNodo;
+    NodoUsuario* anteriorNodo;
+
+
+       ifstream archivo;
+    string line = "";
+
+    archivo.open("usuarios_test.txt",ios::in);//Abrimos el archivo en modo lectura
+
+    while(!archivo.eof()){//mientras NO sea el final del archivo, recorrelo
+
+        while(getline(archivo,line)){
+
+
+            ultimoNodo=cargarNodoUsuarioConArchivo(line) ;
+
+            if(list->tamanioLista==0){
+
+                list->primerUsuario=ultimoNodo;
+            }
+            else{
+
+                anteriorNodo->siguienteUsuario=ultimoNodo;
+            }
+
+                list->tamanioLista++;
+                anteriorNodo=ultimoNodo;
+            }
+
+
+    }
+
+    archivo.close();
+
+
+
+}
 
 NodoUsuario* nuevoNodoUsuario(Usuario* usuario){
     NodoUsuario* nodoUsuario = new NodoUsuario();

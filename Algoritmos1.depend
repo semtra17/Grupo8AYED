@@ -63,37 +63,51 @@
 
 1631837718 c:\users\luciano\desktop\algoritmos1\lista.h
 
-1632267290 source:c:\users\luciano\desktop\algoritmos1\listausuario.cpp
+1632784036 source:c:\users\luciano\desktop\algoritmos1\listausuario.cpp
 	"ListaUsuario.h"
+	"Funciones.h"
 	"Usuario.h"
 	<fstream>
 	<stdlib.h>
 	<iostream>
+	<sstream>
 
 1632267278 c:\users\luciano\desktop\algoritmos1\listausuario.h
 	"Usuario.h"
 
-1632267047 c:\users\luciano\desktop\algoritmos1\usuario.h
+1632681557 c:\users\luciano\desktop\algoritmos1\usuario.h
 	<stdio.h>
 	<string.h>
 	"Usuario.h"
 	"Direccion.h"
+	<string>
 
-1632269087 source:c:\users\luciano\desktop\algoritmos1\main.cpp
+1632780967 source:c:\users\luciano\desktop\algoritmos1\main.cpp
 	<iostream>
 	<fstream>
 	<stdlib.h>
+	<string>
 	"Lista.h"
 	"ListaUsuario.h"
-	"Usuario.h"
+	<sstream>
+	"Funciones.h"
 
 1631908380 source:c:\users\luciano\desktop\algoritmos1\seleccionmensual.cpp
 	"SeleccionMensual.h"
 
 1632090575 c:\users\luciano\desktop\algoritmos1\seleccionmensual.h
 
-1632266789 source:c:\users\luciano\desktop\algoritmos1\usuario.cpp
+1632681606 source:c:\users\luciano\desktop\algoritmos1\usuario.cpp
 	"Usuario.h"
 
 1631909239 source:c:\users\luciano\desktop\algoritmos1\vino.cpp
+
+1632780589 source:c:\users\luciano\desktop\algoritmos1\funciones.cpp
+	"Funciones.h"
+	<cstring>
+	<iostream>
+	<string>
+
+1632780381 c:\users\luciano\desktop\algoritmos1\funciones.h
+	<string>
 

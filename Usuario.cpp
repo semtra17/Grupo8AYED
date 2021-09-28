@@ -4,36 +4,32 @@
 
 
 
-Usuario* crearUsuario( char nombreYapellido[50], int edad, char direccion[40]){
+Usuario* crearUsuario(  string nombreYapellido, int edad, string direccion){
     Usuario *usuario = new Usuario();
-    strcpy(usuario->direccion,direccion);
-    fflush(stdin);
-    strcpy(usuario->nombreYapellido,nombreYapellido);
-    fflush(stdin);
+    usuario->direccion= direccion;
+    usuario->nombreYapellido = nombreYapellido;
     usuario->edad = edad;
     return usuario;
 }
 
-Usuario* crearUsuarioConId(char id_usuario[6], char nombreYapellido[50], int edad, char direccion[40]){
+Usuario* crearUsuarioConId(string id_usuario, string nombreYapellido, int edad, string direccion){
     Usuario *usuario = new Usuario();
-    fflush(stdin);
-    strcpy(usuario->direccion,direccion);
-    fflush(stdin);
-    strcpy(usuario->id_usuario,id_usuario);
-    strcpy(usuario->nombreYapellido,nombreYapellido);
-    fflush(stdin);
+    usuario->direccion= direccion;
+    usuario->nombreYapellido = nombreYapellido;
+    usuario->id_usuario = id_usuario;
     usuario->edad = edad;
     return usuario;
 }
-char *getIdUsuario(Usuario *usuario){
+
+string getIdUsuario(Usuario *usuario){
     return usuario->id_usuario;
 }
 
-char * getDireccion(Usuario *usuario){
+string getNombreYapellido(Usuario *usuario){
     return usuario->direccion;
 }
 
-char *getNombreYapellido(Usuario *usuario){
+string getDireccion(Usuario *usuario){
     return usuario->nombreYapellido;
 }
 
@@ -41,16 +37,17 @@ int getEdad(Usuario *usuario){
     return usuario->edad;
 }
 
-void setDireccion(Usuario *usuario, char direccion[40]){
-       strcpy(usuario->direccion,direccion);
+void setDireccion(Usuario *usuario, string direccion){
+    usuario->direccion = direccion;
+
 }
 
-void setIdUsuario(Usuario *usuario, char id_usuario[6]){
-    strcpy(usuario->id_usuario,id_usuario);
+void setIdUsuario(Usuario *usuario, string id_usuario){
+     usuario->id_usuario = id_usuario;
 }
 
-void setNombreYapellido(Usuario * usuario, char nombreYapellido[50]){
-    strcpy(usuario->nombreYapellido,nombreYapellido);
+void setNombreYapellido(Usuario * usuario, string nombreYapellido){
+    usuario->nombreYapellido = nombreYapellido;
 }
 void setEdad(Usuario * usuario, int edad){
 
