@@ -2,7 +2,7 @@
 #include "Funciones.h"
 #include "Usuario.h"
 #include <fstream>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <iostream>
 #include <sstream>
 using std::cout; using std::cin;
@@ -43,16 +43,17 @@ NodoUsuario* cargarNodoUsuarioConArchivo(string line){
 
 
         stringstream ss(line);
-        getline(ss, id_usuario, '-');
+        getline(ss, auxId_usuario, '-');
+        id_usuario = eliminarEspacios(auxId_usuario);
         getline(ss, auxNombrApellido, '-');
-        nombrApellido = eliminarEspaciosDelComienzoYFinal(auxNombrApellido);
+        nombrApellido = eliminarEspacios(auxNombrApellido);
         getline(ss, auxDireccion, '-');
-        direccion = eliminarEspaciosDelComienzoYFinal(auxDireccion);
+        direccion = eliminarEspacios(auxDireccion);
         getline(ss, aux, '-');
         edad= stoi(aux);
 
 
-        Usuario *u = crearUsuarioConId(id_usuario,nombrApellido,edad,direccion);
+        Usuario *u = crearUsuario(id_usuario,nombrApellido,edad,direccion);
 
 
         NodoUsuario* n = new NodoUsuario();

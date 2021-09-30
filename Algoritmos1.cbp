@@ -40,6 +40,8 @@
 		<Unit filename="Lista.h" />
 		<Unit filename="ListaUsuario.cpp" />
 		<Unit filename="ListaUsuario.h" />
+		<Unit filename="ListaVinos.cpp" />
+		<Unit filename="ListaVinos.h" />
 		<Unit filename="SeleccionMensual.cpp" />
 		<Unit filename="SeleccionMensual.h" />
 		<Unit filename="Usuario.cpp" />

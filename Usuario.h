@@ -16,7 +16,7 @@ struct Usuario{
 
 
 Usuario* crearUsuario(string nombreYapellido, int edad,string direccion);
-Usuario* crearUsuarioConId(string id_usuario, string nombreYapellido, int edad, string direccion);
+Usuario* crearUsuario(string id_usuario, string nombreYapellido, int edad, string direccion);
 string getIdUsuario(Usuario *usuario);
 string getNombreYapellido(Usuario *usuario);
 string getDireccion(Usuario *usuario);

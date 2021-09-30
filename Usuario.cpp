@@ -12,7 +12,7 @@ Usuario* crearUsuario(  string nombreYapellido, int edad, string direccion){
     return usuario;
 }
 
-Usuario* crearUsuarioConId(string id_usuario, string nombreYapellido, int edad, string direccion){
+Usuario* crearUsuario(string id_usuario, string nombreYapellido, int edad, string direccion){
     Usuario *usuario = new Usuario();
     usuario->direccion= direccion;
     usuario->nombreYapellido = nombreYapellido;

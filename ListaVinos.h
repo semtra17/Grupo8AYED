@@ -1,37 +1,41 @@
 #ifndef LISTAVINOS_H_INCLUDED
 #define LISTAVINOS_H_INCLUDED
 #include "Vino.h"
+
+
 struct NodoVino{
     Vino* elementoVino;
-    NodoVino* siguienteVIno;
+    NodoVino* sigVino;
 };
 
 
-struct ListaVino{
+struct ListaVinos{
 
-    NodoVino *primerVino;
+    NodoVino* primerVino;
     int tamanioLista;
 };
 
-void printListaVinos(ListaVino* list);
-void cargarListaVinoDesdeArchivo(ListaVino* list);
+void printListaVinos(ListaVinos* list);
 
-NodoVino* nuevoNodoVino(Vino* vino);
+void cargarListaVinosDesdeArchivo(ListaVinos* list);
 
-ListaVino* nuevaListaVino();
+NodoVino* cargarNodoVinoConArchivo(string line);
+
+NodoVino* nuevoNodoVino(Vino* v);
+
+ListaVinos* nuevaListaVinos();
 
 void linkToNextNodoVino(NodoVino* currentNode, NodoVino* nodeToAdd);
 
-void agregarNodoVino(ListaVino* list, NodoVino* nodeToAdd);
+void agregarNodoVino(ListaVinos* list, NodoVino* nodeToAdd);
 
-void agregarVino(ListaVino* list, Vino * usuarioToAdd);
+void agregarVino(ListaVinos* list, Vino * vinoToAdd);
 
-NodoVino* findVinoById(ListaVino* list, int idVino);
+NodoVino* findVinoById(ListaVinos* list, string idVIno);
 
-void removeNodeVino(ListaVino* list, NodoVino* nodeToRemove);
+void removeNode(ListaVinos* list, NodoVino* nodeToRemove);
 
-void removeVino(ListaVino* list, int idVino);
-
+void removeVino(ListaVinos* list, Vino *v);
 
 
 

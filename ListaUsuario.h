@@ -1,6 +1,8 @@
 #ifndef LISTAUSUARIO_H_INCLUDED
 #define LISTAUSUARIO_H_INCLUDED
 #include "Usuario.h"
+
+
 struct NodoUsuario{
     Usuario* elementoUsuario;
     NodoUsuario* siguienteUsuario;
@@ -16,7 +18,7 @@ struct ListaUsuario{
 void printListaUsuario(ListaUsuario* list);
 
 void cargarListaUsuarioDesdeArchivo(ListaUsuario* list);
-NodoUsuario* cargarNodoConArchivo(char renglonArchivo[]);
+NodoUsuario* cargarNodoConArchivo(string line);
 
 NodoUsuario* nuevoNodoUsuario(Usuario* usuario);
 
