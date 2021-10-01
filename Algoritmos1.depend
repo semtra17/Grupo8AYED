@@ -63,7 +63,7 @@
 
 1631837718 c:\users\luciano\desktop\algoritmos1\lista.h
 
-1633018198 source:c:\users\luciano\desktop\algoritmos1\listausuario.cpp
+1633045701 source:c:\users\luciano\desktop\algoritmos1\listausuario.cpp
 	"ListaUsuario.h"
 	"Funciones.h"
 	"Usuario.h"
@@ -75,14 +75,12 @@
 1633004042 c:\users\luciano\desktop\algoritmos1\listausuario.h
 	"Usuario.h"
 
-1633018211 c:\users\luciano\desktop\algoritmos1\usuario.h
+1633043669 c:\users\luciano\desktop\algoritmos1\usuario.h
 	<stdio.h>
 	<string.h>
-	"Usuario.h"
-	"Direccion.h"
 	<string>
 
-1633024582 source:c:\users\luciano\desktop\algoritmos1\main.cpp
+1633050363 source:c:\users\luciano\desktop\algoritmos1\main.cpp
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -90,25 +88,32 @@
 	"Lista.h"
 	"ListaUsuario.h"
 	"ListaVinos.h"
+	"ListaSelecciones.h"
+	"SeleccionMensual.h"
 	<sstream>
 	"Funciones.h"
 
-1631908380 source:c:\users\luciano\desktop\algoritmos1\seleccionmensual.cpp
+1633043446 source:c:\users\luciano\desktop\algoritmos1\seleccionmensual.cpp
 	"SeleccionMensual.h"
+	<iostream>
 
-1632090575 c:\users\luciano\desktop\algoritmos1\seleccionmensual.h
+1633043449 c:\users\luciano\desktop\algoritmos1\seleccionmensual.h
+	<stdio.h>
+	<string.h>
+	<string>
 
-1633018203 source:c:\users\luciano\desktop\algoritmos1\usuario.cpp
+1633043845 source:c:\users\luciano\desktop\algoritmos1\usuario.cpp
 	"Usuario.h"
+	<iostream>
 
-1633007088 source:c:\users\luciano\desktop\algoritmos1\vino.cpp
+1633043984 source:c:\users\luciano\desktop\algoritmos1\vino.cpp
 	"Vino.h"
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
 	<string.h>
 
-1633025068 source:c:\users\luciano\desktop\algoritmos1\funciones.cpp
+1633026203 source:c:\users\luciano\desktop\algoritmos1\funciones.cpp
 	"Funciones.h"
 	<cstring>
 	<iostream>
@@ -117,10 +122,10 @@
 1633008249 c:\users\luciano\desktop\algoritmos1\funciones.h
 	<string>
 
-1633005078 c:\users\luciano\desktop\algoritmos1\vino.h
+1633043884 c:\users\luciano\desktop\algoritmos1\vino.h
 	<string>
 
-1633025155 source:c:\users\luciano\desktop\algoritmos1\listavinos.cpp
+1633044011 source:c:\users\luciano\desktop\algoritmos1\listavinos.cpp
 	"Vino.h"
 	"ListaVinos.h"
 	"Funciones.h"
@@ -131,4 +136,16 @@
 
 1633006509 c:\users\luciano\desktop\algoritmos1\listavinos.h
 	"Vino.h"
+
+1633045915 source:c:\users\luciano\desktop\algoritmos1\listaselecciones.cpp
+	"Funciones.h"
+	"ListaSelecciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"SeleccionMensual.h"
+
+1633045839 c:\users\luciano\desktop\algoritmos1\listaselecciones.h
+	"SeleccionMensual.h"
 

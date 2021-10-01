@@ -8,6 +8,7 @@
 using namespace std;
 
 string eliminarEspacios(string cadena){
+
     int posComienzo = -1, auxPosComienzo = 0;
     int posFinal = 0, auxPosFinal = 0;
     char espacio = ' ';
@@ -74,54 +75,3 @@ string eliminarEspacios(string cadena){
 
 }
 
-string eliminarEspaciosDelComienzoYFinal(string cadena){
-    cout << "Palbra: "<< cadena << endl;
-//        cout <<"Palabra a la cual se eliminaran los espacios : "<<  cadena << endl;
-        int posComienzo = 0;
-        int posFinal = 0;
-        char letra;
-        char auxCadena[40];
-        char subCadena[40];
-        char espacio = ' ';
-        int i = 0, tamanio = 0, j= 0;
-
-        string palabra;
-//Elimino los espacios al principio de la cadena
-        while(i < cadena.length()){
-
-          if(cadena[i] != espacio){
-                i = cadena.length() +  1;
-            }
-           posComienzo++;
-        }
-
-         for(int i = 0; i< cadena.length(); i++) {
-            fflush(stdin);
-            auxCadena[i] = cadena[posComienzo++];
-        }
-
-    cout << "Palbra: "<< auxCadena << endl;
-
-//Elimino los espacios al final de la cadena
-        tamanio = strlen(auxCadena) -1 ;
-        while(j == 0){
-          if(auxCadena[tamanio] != espacio){
-                posFinal = tamanio;
-                j = 1;
-            }
-           tamanio--;
-        }
-
-//        cout << "Palabra: "<< auxCadena[posFinal-5] << endl;
-        for(int i = 0; i<=posFinal; i++) {
-            subCadena[i] = auxCadena[i];
-        }
-
-        cout << "Palbra: "<< subCadena << endl;
-        palabra = subCadena;
-
-
-
-
-    return palabra;
-}

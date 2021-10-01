@@ -1,27 +1,34 @@
 #ifndef SELECCIONMENSUAL_H_INCLUDED
 #define SELECCIONMENSUAL_H_INCLUDED
+#include <stdio.h>
+#include <string.h>
+#include <string>
+
+using namespace std;
 
 struct SeleccionMensual{
-    int idUsuario;
-    char mes[12];
+    std::string idSelecMen;
+    std::string mes;
     int anio;
-    int idsVinos[6];
+    std::string idsVinos[6];
 };
 
 
-SeleccionMensual * crearSeleccionMensual(int idUsuario, char mes[12], int anio, int idsVinos[6]);
-
-int getIdUsuarioDeSelecMen(SeleccionMensual * s);
-int getAnio(SeleccionMensual *s);
-int getIdsVinos(SeleccionMensual *s);
-char *getMes(SeleccionMensual *s);
-
-void setIdUsuario(SeleccionMensual *s,int idUsuario);
-void setMes(SeleccionMensual *s, char mes[12]);
-void setAnio(SeleccionMensual *s,int anio);
-void setIdsVinos(SeleccionMensual *s,int idsVinos[6]);
+SeleccionMensual * crearSeleccionMensual(string idSelecMen, string mes, int anio, string idsVinos[6]);
+SeleccionMensual * crearSeleccionMensual( string mes, int anio, string idsVinos[6]);
 
 
+string getIdSelecMen(SeleccionMensual * s);
+int getAnioSelecMen(SeleccionMensual *s);
+string getMesSelecMen(SeleccionMensual *s);
+string *getIdsVinos(SeleccionMensual *s);
+
+void setIdSelecMen(SeleccionMensual *s,string idSelecMen);
+void setMesSelecMen(SeleccionMensual *s, string mes);
+void setAnioSelecMen(SeleccionMensual *s,int anio);
+void setIdsVinos(SeleccionMensual *s,string idsVinos[6]);
+void printSelecMen(SeleccionMensual *s);
+void printIdsVinos(string idsVinos[6]);
 
 
 #endif // SELECCIONMENSUAL_H_INCLUDED

@@ -2,8 +2,6 @@
 #define USUARIO_H_INCLUDED
 #include <stdio.h>
 #include <string.h>
-#include "Usuario.h"
-#include "Direccion.h"
 #include <string>
 using namespace std;
 
@@ -26,5 +24,6 @@ void setDireccion(Usuario *usuario, string direccion);
 void setIdUsuario(Usuario *usuario, string id_usuario);
 void setNombreYapellido(Usuario * usuario, string nombreYapellido);
 void setEdad(Usuario * usuario, int edad);
+void printUsuario(Usuario *u);
 
 #endif // USUARIO_H_INCLUDED

@@ -32,6 +32,7 @@ void setSegmentoDelVino(Vino *v, string segmentoDelVino);
 void setVarietal(Vino *v, string varietal);
 void setAnioCosecha(Vino *v, string anioCosecha);
 void setTerroir(Vino *v, string terroir);
+void printVino(Vino *v);
 
 
 

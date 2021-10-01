@@ -1,7 +1,7 @@
 #include "Usuario.h"
+#include <iostream>
 
-
-
+using namespace std;
 
 
 Usuario* crearUsuario(  string nombreYapellido, int edad, string direccion){
@@ -53,4 +53,11 @@ void setEdad(Usuario * usuario, int edad){
 
     usuario->edad = edad;
 }
+void printUsuario(Usuario *u){
+    cout << "======================" << endl;
+    cout << "IdUsuario: " << u->id_usuario << endl;
+    cout << "Nombre y Apellido: " << u->nombreYapellido << endl;
+    cout << "Edad: " << u->edad << endl;
+    cout << "Direccion: " << u->direccion<< endl;
 
+}

@@ -38,6 +38,8 @@
 		<Unit filename="Funciones.h" />
 		<Unit filename="Lista.cpp" />
 		<Unit filename="Lista.h" />
+		<Unit filename="ListaSelecciones.cpp" />
+		<Unit filename="ListaSelecciones.h" />
 		<Unit filename="ListaUsuario.cpp" />
 		<Unit filename="ListaUsuario.h" />
 		<Unit filename="ListaVinos.cpp" />

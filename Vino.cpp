@@ -13,6 +13,7 @@ Vino *crearVino(string idVino, string etiqueta, string bodega, string segmentoDe
     setAnioCosecha(v, anioCosecha);
     setTerroir(v,terroir);
 
+
     return v;
 
 
@@ -72,4 +73,15 @@ void setAnioCosecha(Vino *v, string anioCosecha){
 }
 void setTerroir(Vino *v, string terroir){
     v->terroir = terroir;
+}
+
+void printVino(Vino *v){
+    cout << "========================" << endl;
+    cout << "Id Vino: " << v->idVino << endl;
+    cout << "Etiqueta: " << v->etiqueta << endl;
+    cout << "Anio de cosecha: " << v->anioCosecha << endl;
+    cout << "Segmento: " << v->segmentoDelVino << endl;
+    cout << "Varietal: " << v->varietal << endl;
+    cout << "Terroir: " << v->terroir << endl;
+
 }

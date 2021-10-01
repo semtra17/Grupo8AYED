@@ -14,10 +14,7 @@ void printListaUsuario(ListaUsuario* list){
 
     NodoUsuario* n = list->primerUsuario;
     while (n != NULL) {
-        cout << "Id Usuario: " << n->elementoUsuario->id_usuario << endl;
-        cout << "Nombre y apellido: " << n->elementoUsuario->nombreYapellido << endl << "Edad: " << n->elementoUsuario->edad << endl ;
-        cout << "Direccion: " << n->elementoUsuario->direccion << endl ;
-        cout << "=======================================" << endl;
+        printUsuario(n->elementoUsuario);
         n = n->siguienteUsuario;
     }
 

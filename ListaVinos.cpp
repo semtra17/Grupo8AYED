@@ -15,13 +15,7 @@ void printListaVinos(ListaVinos* list){
     NodoVino *n = list->primerVino;
     while(n != NULL){
         Vino *v = n->elementoVino;
-        cout << "=====================" << endl;
-        cout << "IdVino: "  << getIdVino(v)  << endl;
-        cout << "Etiqueta: " << getEtiqueta(v) << endl;
-        cout << "Bodega: " << getBodega(v) << endl;
-        cout << "Varietal: " << getVarietal(v) << endl;
-        cout << "Año Cosecha: " << getAnioCosecha(v) << endl;
-        cout << "Terroir: " << getTerroir(v) << endl;
+        printVino(v);
         n = n->sigVino;
     }
 
