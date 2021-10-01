@@ -4,6 +4,10 @@
 using namespace std;
 
 
+
+//------------------------------------------------------
+//CONSTRUCTOR
+
 Usuario* crearUsuario(  string nombreYapellido, int edad, string direccion){
     Usuario *usuario = new Usuario();
     usuario->direccion= direccion;
@@ -21,6 +25,12 @@ Usuario* crearUsuario(string id_usuario, string nombreYapellido, int edad, strin
     return usuario;
 }
 
+
+
+
+//------------------------------------------------------
+//GETS
+
 string getIdUsuario(Usuario *usuario){
     return usuario->id_usuario;
 }
@@ -36,6 +46,10 @@ string getDireccion(Usuario *usuario){
 int getEdad(Usuario *usuario){
     return usuario->edad;
 }
+
+//------------------------------------------------------
+//SETS
+
 
 void setDireccion(Usuario *usuario, string direccion){
     usuario->direccion = direccion;
@@ -53,6 +67,9 @@ void setEdad(Usuario * usuario, int edad){
 
     usuario->edad = edad;
 }
+//------------------------------------------------------
+//UTILIDADES
+
 void printUsuario(Usuario *u){
     cout << "======================" << endl;
     cout << "IdUsuario: " << u->id_usuario << endl;
@@ -60,4 +77,12 @@ void printUsuario(Usuario *u){
     cout << "Edad: " << u->edad << endl;
     cout << "Direccion: " << u->direccion<< endl;
 
+}
+
+
+//------------------------------------------------------
+//DESTRUCTOR
+
+void borrarUsuario(Usuario* u){
+    delete(u);
 }

@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string.h>
+//------------------------------------------------------------
+//CONSTUCTOR
 Vino *crearVino(string idVino, string etiqueta, string bodega, string segmentoDelVino, string varietal, string anioCosecha,string terroir){
     Vino *v = new Vino();
     setIdVino(v, idVino);
@@ -18,6 +20,8 @@ Vino *crearVino(string idVino, string etiqueta, string bodega, string segmentoDe
 
 
 }
+//------------------------------------------------------------
+//CONSTUCTOR
 Vino *crearVino(string etiqueta, string bodega, string segmentoDelVino, string varietal, string anioCosecha, string terroir){
 
     Vino *v = new Vino();
@@ -29,6 +33,14 @@ Vino *crearVino(string etiqueta, string bodega, string segmentoDelVino, string v
 
     return v;
 }
+//------------------------------------------------------------
+//DESTRUCTOR
+
+void borrarVino(Vino *v){
+    delete(v);
+}
+//------------------------------------------------------------
+//GETS
 
 string getIdVino(Vino *v){
     return v->idVino;
@@ -52,6 +64,10 @@ string getAnioCosecha(Vino *v){
     return v->anioCosecha;
 }
 
+//------------------------------------------------------------
+//SETS
+
+
 void setEtiqueta(Vino *v, string etiqueta){
     v->etiqueta = etiqueta;
 
@@ -74,7 +90,8 @@ void setAnioCosecha(Vino *v, string anioCosecha){
 void setTerroir(Vino *v, string terroir){
     v->terroir = terroir;
 }
-
+//------------------------------------------------------------
+//UTILIDADES
 void printVino(Vino *v){
     cout << "========================" << endl;
     cout << "Id Vino: " << v->idVino << endl;
@@ -85,3 +102,5 @@ void printVino(Vino *v){
     cout << "Terroir: " << v->terroir << endl;
 
 }
+
+

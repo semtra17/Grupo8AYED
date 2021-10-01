@@ -4,6 +4,7 @@
 
 
 struct NodoUsuario{
+    NodoUsuario *anteriorUsuario;
     Usuario* elementoUsuario;
     NodoUsuario* siguienteUsuario;
 };
@@ -12,6 +13,7 @@ struct NodoUsuario{
 struct ListaUsuario{
 
     NodoUsuario* primerUsuario;
+    NodoUsuario* ultimoUsuario;
     int tamanioLista;
 };
 

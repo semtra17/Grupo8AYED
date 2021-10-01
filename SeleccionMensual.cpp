@@ -2,6 +2,8 @@
 #include <iostream>
 
 using namespace std;
+//------------------------------------------------------------
+//CONSTUCTOR
 
 SeleccionMensual * crearSeleccionMensual(string idSelecMen, string mes, int anio, string idsVinos[6]){
     SeleccionMensual *sm = new SeleccionMensual();
@@ -12,6 +14,11 @@ SeleccionMensual * crearSeleccionMensual(string idSelecMen, string mes, int anio
 
     return sm;
 }
+//SOBRECARGA DE METODOS
+//------------------------------------------------------------
+//CONSTUCTOR
+
+
 SeleccionMensual * crearSeleccionMensual( string mes, int anio, string idsVinos[6]){
 
     SeleccionMensual *sm = new SeleccionMensual();
@@ -21,6 +28,9 @@ SeleccionMensual * crearSeleccionMensual( string mes, int anio, string idsVinos[
 
     return sm;
 }
+//------------------------------------------------------------
+//GETS
+
 string getIdSelecMen(SeleccionMensual * s){
     return s->idSelecMen;
 
@@ -35,6 +45,8 @@ string getMesSelecMen(SeleccionMensual *s){
 string * getIdsVinos(SeleccionMensual *s){
     return s->idsVinos;
 }
+//------------------------------------------------------------
+//SETS
 
 void setIdSelecMen(SeleccionMensual *s,string idSelecMen){
 
@@ -52,6 +64,8 @@ void setIdsVinos(SeleccionMensual *s,string idsVinos[6]){
     }
 
 }
+//------------------------------------------------------------
+//UTILIDADES
 
 void printIdsVinos(string idsVinos[6]){
     cout << "Id de vinos de la seleccion mensual" << endl;
