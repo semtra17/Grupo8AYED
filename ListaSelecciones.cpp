@@ -1,4 +1,3 @@
-
 #include "Funciones.h"
 #include "ListaSelecciones.h"
 #include <fstream>
@@ -7,98 +6,75 @@
 #include <sstream>
 #include "SeleccionMensual.h"
 
-
-
 void printListaSelecciones(ListaSelecciones* list){
-
     NodoSeleccion* sm = list->primerSeleccion;
     while (sm != NULL) {
         printSelecMen(sm->elementoSeleccion);
         sm = sm->sigSeleccion;
     }
-
 }
+
 void cargarListaSeleccionesDesdeArchivo(ListaSelecciones* list){
     NodoSeleccion* ultimoNodo;
     NodoSeleccion* anteriorNodo;
 
-
-       ifstream archivo;
+    ifstream archivo;
     string line = "";
 
     archivo.open("eleccion_test.txt",ios::in);//Abrimos el archivo en modo lectura
 
     while(!archivo.eof()){//mientras NO sea el final del archivo, recorrelo
-
         while(getline(archivo,line)){
-
-
             ultimoNodo=cargarNodoSeleccionConArchivo(line) ;
-
             if(list->tamanioLista==0){
-
                 list->primerSeleccion=ultimoNodo;
-            }
-            else{
-
+            }else{
                 anteriorNodo->sigSeleccion=ultimoNodo;
             }
+            list->tamanioLista++;
+            anteriorNodo=ultimoNodo;
+        }
+    }
+    archivo.close();
+}
 
-                list->tamanioLista++;
-                anteriorNodo=ultimoNodo;
-            }
+NodoSeleccion* cargarNodoSeleccionConArchivo(string line){
+    string auxIdSelecMen;
+    string auxAnio;
+    string auxMes;
+    string auxIdsVinos[6];
+    string idSeleccionMen;
+    int anio = 0;
+    string mes;
+    string idsVinos[6];
 
+    stringstream ss(line);
+    getline(ss, auxIdSelecMen, '-');
+//        idSeleccionMen = eliminarEspacios(auxIdSelecMen);
+    idSeleccionMen = auxIdSelecMen;
+
+    getline(ss, auxMes, '-');
+//        mes = eliminarEspacios(auxMes);
+    mes = auxMes;
+
+    getline(ss, auxAnio, '-');
+    anio = stoi(auxAnio);
+
+    for(int i =0; i <= 5; i++){
+          getline(ss, auxIdsVinos[i], '-');
+          idsVinos[i] = auxIdsVinos[i];
+//                      idsVinos[i] = eliminarEspacios(auxIdsVinos[i]);
 
     }
 
-    archivo.close();
 
-
-}
-NodoSeleccion* cargarNodoSeleccionConArchivo(string line){
-
-
-        string auxIdSelecMen;
-        string auxAnio;
-        string auxMes;
-        string auxIdsVinos[6];
-
-        string idSeleccionMen;
-        int anio = 0;
-        string mes;
-        string idsVinos[6];
-
-
-
-        stringstream ss(line);
-        getline(ss, auxIdSelecMen, '-');
-        idSeleccionMen = eliminarEspacios(auxIdSelecMen);
-
-        getline(ss, auxMes, '-');
-        mes = eliminarEspacios(auxMes);
-
-        getline(ss, auxAnio, '-');
-        anio = stoi(auxAnio);
-
-        for(int i =0; i< 5; i++){
-              getline(ss, auxIdsVinos[i], '-');
-              idsVinos[i] = eliminarEspacios(auxIdsVinos[i]);
-        }
-
-        getline(ss, auxIdsVinos[6], ';');
-        idsVinos[6] = eliminarEspacios(idsVinos[6]);
-
-
-        SeleccionMensual *sm = crearSeleccionMensual(idSeleccionMen,mes,anio,idsVinos);
-
-
-        NodoSeleccion * ns = new NodoSeleccion();
-        ns->elementoSeleccion = sm;
-        ns->sigSeleccion = NULL;
-
-
-
-
+    getline(ss, auxIdsVinos[6], ';');
+//                idsVinos[6] = eliminarEspacios(idsVinos[6]);
+    idsVinos[6] = idsVinos[6];
+    SeleccionMensual *sm = crearSeleccionMensual(idSeleccionMen,mes,anio,idsVinos);
+    NodoSeleccion * ns = new NodoSeleccion();
+    ns->elementoSeleccion = sm;
+    ns->sigSeleccion = NULL;
     return ns;
 }
 
@@ -107,13 +83,9 @@ NodoSeleccion* nuevoNodoSeleccion(SeleccionMensual* s){
     nodoSeleccion->elementoSeleccion = s;
     nodoSeleccion->sigSeleccion = NULL;
     return nodoSeleccion;
-
 }
 
-
-
 ListaSelecciones* nuevaListaSelecciones(){
-
     ListaSelecciones* lista = new ListaSelecciones();
     lista->primerSeleccion = NULL;
     lista->tamanioLista = 0 ;
@@ -121,30 +93,28 @@ ListaSelecciones* nuevaListaSelecciones(){
 }
 
 void linkToNextNodoSeleccion(NodoSeleccion* currentNode, NodoSeleccion* nodeToAdd){
-
     if (currentNode->sigSeleccion == NULL){
 		currentNode->sigSeleccion = nodeToAdd;
 	}else{
 	 	linkToNextNodoSeleccion(currentNode->sigSeleccion, nodeToAdd);
 	}
 }
-void agregarNodoSeleccion(ListaSelecciones* list, NodoSeleccion* nodeToAdd){
 
+void agregarNodoSeleccion(ListaSelecciones* list, NodoSeleccion* nodeToAdd){
     if(list->primerSeleccion == NULL){
-            list->primerSeleccion = nodeToAdd;
-            list->tamanioLista++;
+        list->primerSeleccion = nodeToAdd;
+        list->tamanioLista++;
      }else{
-            linkToNextNodoSeleccion(list->primerSeleccion, nodeToAdd);
-            list->tamanioLista++;
+        linkToNextNodoSeleccion(list->primerSeleccion, nodeToAdd);
+        list->tamanioLista++;
       }
 }
 
 void agregarSeleccion(ListaSelecciones* list, SeleccionMensual * seleccionToAdd){
-
     NodoSeleccion* node = nuevoNodoSeleccion(seleccionToAdd);
     agregarNodoSeleccion(list, node);
-
 }
+
 NodoSeleccion* findSelcMenById(ListaSelecciones* list, string idSeleccion){
       NodoSeleccion* sm = list->primerSeleccion;
       NodoSeleccion* temp;
@@ -156,13 +126,11 @@ NodoSeleccion* findSelcMenById(ListaSelecciones* list, string idSeleccion){
       }
       return temp;
 }
-void removeNode(ListaSelecciones* list, NodoSeleccion* nodeToRemove){
 
+void removeNode(ListaSelecciones* list, NodoSeleccion* nodeToRemove){
     NodoSeleccion* tempSeleccNode = nodeToRemove;
     NodoSeleccion* tempPreviousNode = NULL;
-
     NodoSeleccion* sm = list->primerSeleccion;
-
     while (sm != NULL) {
         if(sm->sigSeleccion == nodeToRemove){
           tempPreviousNode = sm;
@@ -170,17 +138,87 @@ void removeNode(ListaSelecciones* list, NodoSeleccion* nodeToRemove){
         sm = sm->sigSeleccion;
     }
       tempPreviousNode->sigSeleccion = tempSeleccNode;
-
       delete nodeToRemove;
-
-
-
 }
 
 void removeSelecMen(ListaSelecciones* list, SeleccionMensual *s){
-
     NodoSeleccion* nodeToRemove = findSelcMenById(list, s->idSelecMen);
     removeNode(list, nodeToRemove);
+}
+//new code for extract
 
+struct NodoRegistroVino{
+  std::string idVino;
+  int cantidadSeleccionado;
+  NodoRegistroVino* SiguienteNodoRegistroVino;
+};
 
+struct ListaRegistroVino
+{
+	NodoRegistroVino* primerNodoRegistroVino;
+};
+
+ListaRegistroVino* newListaRegistroVino(){
+	ListaRegistroVino *list = new ListaRegistroVino();
+	list->primerNodoRegistroVino = NULL;
+	return list;
+}
+
+NodoRegistroVino* newNodoRegistroVino(string idVino){
+	NodoRegistroVino *node = new NodoRegistroVino();
+	node->idVino = idVino;
+	node->cantidadSeleccionado = 0;
+  node->SiguienteNodoRegistroVino = NULL;
+	return node;
+}
+
+NodoRegistroVino* buscarRegristoVinoPorId(ListaRegistroVino* list, string idVino){
+    //no deberia crear en el buscar
+    if(list->primerNodoRegistroVino == NULL){
+      list->primerNodoRegistroVino = newNodoRegistroVino(idVino);
+    }
+
+    NodoRegistroVino* n = list->primerNodoRegistroVino;
+    NodoRegistroVino* temp;
+    while (n != NULL) {
+      if(n->idVino == idVino){
+        temp = n;
+      }
+      n = n->SiguienteNodoRegistroVino;
+    }
+    return temp;
+}
+
+void AgregarNodoRegistro(ListaRegistroVino* list, string idVino){
+
+}
+
+void contarVino(ListaRegistroVino* list, string idVino){
+  NodoRegistroVino* nodoRegistroVino = buscarRegristoVinoPorId(ListaRegistroVino* list, string idVino);
+  if(nodoRegistroVino != NULL){
+    nodoRegistroVino->cantidadSeleccionado++;
+  }else{
+    agregarNodoRegistro(list, idVino);
+  }
+}
+
+void rankingVinosPerYear(ListaSelecciones* list, int year){
+  ListaRegistroVino* listaRegistroVino = newListaRegistroVino()
+  NodoSeleccion* node = list->primerSeleccion;
+
+  while(node != NULL){
+    SeleccionMensual* seleccionMensual = node->elementoSeleccion;
+    if(seleccionMensual->anio == year){
+      cout <<  "year: " << seleccionMensual->anio << endl;
+      for(int i = 0; i <= 5; i++){
+        contarVino(listaRegistroVino, idsVinos[i]);
+        cout << "id:" << seleccionMensual->idsVinos[i] << endl;
+      }
+    }
+    node = node->sigSeleccion;
+  }
+}
+
+void rankingGeneralDeVinosUltimoYear(ListaSelecciones* list){
+    rankingVinosPerYear(list, 2021);
 }

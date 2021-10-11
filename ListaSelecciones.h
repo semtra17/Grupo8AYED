@@ -38,5 +38,6 @@ void removeNode(ListaSelecciones* list, NodoSeleccion* nodeToRemove);
 
 void removeSelecMen(ListaSelecciones* list, SeleccionMensual *s);
 
+void rankingGeneralDeVinosUltimoYear(ListaSelecciones* list);
 
 #endif // LISTASELECCIONES_H_INCLUDED
