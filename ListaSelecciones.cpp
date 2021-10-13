@@ -62,15 +62,9 @@ NodoSeleccion* cargarNodoSeleccionConArchivo(string line){
 
     for(int i =0; i <= 5; i++){
           getline(ss, auxIdsVinos[i], '-');
-          idsVinos[i] = auxIdsVinos[i];
-//                      idsVinos[i] = eliminarEspacios(auxIdsVinos[i]);
-
+          idsVinos[i] = stringToNumber(auxIdsVinos[i]);
     }
 
-
-    getline(ss, auxIdsVinos[6], ';');
-//                idsVinos[6] = eliminarEspacios(idsVinos[6]);
-    idsVinos[6] = idsVinos[6];
     SeleccionMensual *sm = crearSeleccionMensual(idSeleccionMen,mes,anio,idsVinos);
     NodoSeleccion * ns = new NodoSeleccion();
     ns->elementoSeleccion = sm;
@@ -167,19 +161,14 @@ ListaRegistroVino* newListaRegistroVino(){
 NodoRegistroVino* newNodoRegistroVino(string idVino){
 	NodoRegistroVino *node = new NodoRegistroVino();
 	node->idVino = idVino;
-	node->cantidadSeleccionado = 0;
+	node->cantidadSeleccionado = 1;
   node->SiguienteNodoRegistroVino = NULL;
 	return node;
 }
 
 NodoRegistroVino* buscarRegristoVinoPorId(ListaRegistroVino* list, string idVino){
-    //no deberia crear en el buscar
-    if(list->primerNodoRegistroVino == NULL){
-      list->primerNodoRegistroVino = newNodoRegistroVino(idVino);
-    }
-
     NodoRegistroVino* n = list->primerNodoRegistroVino;
-    NodoRegistroVino* temp;
+    NodoRegistroVino* temp = NULL;
     while (n != NULL) {
       if(n->idVino == idVino){
         temp = n;
@@ -189,12 +178,30 @@ NodoRegistroVino* buscarRegristoVinoPorId(ListaRegistroVino* list, string idVino
     return temp;
 }
 
-void AgregarNodoRegistro(ListaRegistroVino* list, string idVino){
+void linkToNext(NodoRegistroVino* currentNode, NodoRegistroVino* nodeToAdd){
+	if (currentNode->SiguienteNodoRegistroVino == NULL){
+		currentNode->SiguienteNodoRegistroVino = nodeToAdd;
+	}else{
+	 	linkToNext(currentNode->SiguienteNodoRegistroVino, nodeToAdd);
+	}
+}
 
+void addNodeToList(ListaRegistroVino* list, NodoRegistroVino* nodeToAdd){
+  if(list->primerNodoRegistroVino == NULL){
+    list->primerNodoRegistroVino = nodeToAdd;
+  }else{
+    linkToNext(list->primerNodoRegistroVino, nodeToAdd);
+  }
+}
+
+void agregarNodoRegistro(ListaRegistroVino* list, string idVino){
+  NodoRegistroVino* nuevowNodoRegistroVinoNdo = newNodoRegistroVino(idVino);
+  addNodeToList(list, nuevowNodoRegistroVinoNdo);
 }
 
 void contarVino(ListaRegistroVino* list, string idVino){
-  NodoRegistroVino* nodoRegistroVino = buscarRegristoVinoPorId(ListaRegistroVino* list, string idVino);
+  NodoRegistroVino* nodoRegistroVino = buscarRegristoVinoPorId(list, idVino);
+  //cout <<  "NodoRegistroVino: " << nodoRegistroVino->idVino << endl;
   if(nodoRegistroVino != NULL){
     nodoRegistroVino->cantidadSeleccionado++;
   }else{
@@ -202,21 +209,36 @@ void contarVino(ListaRegistroVino* list, string idVino){
   }
 }
 
+void printRegistroVino(NodoRegistroVino *r){
+    cout << "======================================" << endl;
+    cout <<  "idVino: " << r->idVino << endl;
+    cout << "Cantidad: " << r->cantidadSeleccionado << endl;
+}
+
+void printRankingVinosPerYear(ListaRegistroVino* list){
+    NodoRegistroVino* sm = list->primerNodoRegistroVino;
+    while (sm != NULL) {
+        printRegistroVino(sm);
+        sm = sm->SiguienteNodoRegistroVino;
+    }
+}
+
 void rankingVinosPerYear(ListaSelecciones* list, int year){
-  ListaRegistroVino* listaRegistroVino = newListaRegistroVino()
+  ListaRegistroVino* listaRegistroVino = newListaRegistroVino();
   NodoSeleccion* node = list->primerSeleccion;
 
   while(node != NULL){
     SeleccionMensual* seleccionMensual = node->elementoSeleccion;
     if(seleccionMensual->anio == year){
-      cout <<  "year: " << seleccionMensual->anio << endl;
+      //cout <<  "year: " << seleccionMensual->anio << endl;
       for(int i = 0; i <= 5; i++){
-        contarVino(listaRegistroVino, idsVinos[i]);
-        cout << "id:" << seleccionMensual->idsVinos[i] << endl;
+        contarVino(listaRegistroVino, seleccionMensual->idsVinos[i]);
+        //cout << "id:" << seleccionMensual->idsVinos[i] << endl;
       }
     }
     node = node->sigSeleccion;
   }
+  printRankingVinosPerYear(listaRegistroVino);
 }
 
 void rankingGeneralDeVinosUltimoYear(ListaSelecciones* list){
