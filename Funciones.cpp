@@ -1,5 +1,6 @@
 #include "Funciones.h"
 #include <cstring>
+#include <sstream>
 #include <iostream>
 #include<string>
 
@@ -75,3 +76,9 @@ string eliminarEspacios(string cadena){
 
 }
 
+string stringToNumber(string cadena){
+  std::istringstream iss(cadena);
+  std::string s;
+  iss >> s;
+  return s;
+}
