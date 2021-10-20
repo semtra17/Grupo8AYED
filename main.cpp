@@ -25,7 +25,7 @@ int main()
 
     ListaSelecciones *LISTA_SELECCION_MENSUAL = nuevaListaSelecciones();
     cargarListaSeleccionesDesdeArchivo(LISTA_SELECCION_MENSUAL);
-    printListaSelecciones(LISTA_SELECCION_MENSUAL);
+    //printListaSelecciones(LISTA_SELECCION_MENSUAL);
 
     rankingGeneralDeVinosUltimoYear(LISTA_SELECCION_MENSUAL);
 }

@@ -162,7 +162,7 @@ NodoRegistroVino* newNodoRegistroVino(string idVino){
 	NodoRegistroVino *node = new NodoRegistroVino();
 	node->idVino = idVino;
 	node->cantidadSeleccionado = 1;
-  node->SiguienteNodoRegistroVino = NULL;
+    node->SiguienteNodoRegistroVino = NULL;
 	return node;
 }
 
@@ -215,6 +215,29 @@ void printRegistroVino(NodoRegistroVino *r){
     cout << "Cantidad: " << r->cantidadSeleccionado << endl;
 }
 
+void sortRankingVinos(ListaRegistroVino* list){
+    NodoRegistroVino* sm = list->primerNodoRegistroVino;
+    bool changed = true;
+    while(changed == true){
+        changed = false;
+        cout << "changed" << endl;
+        while (sm->SiguienteNodoRegistroVino != NULL) {
+            cout << "Cantidad: " << sm->cantidadSeleccionado << endl;
+            NodoRegistroVino* siguienteNodoRegistroVino = sm->SiguienteNodoRegistroVino;
+            if(sm->cantidadSeleccionado < siguienteNodoRegistroVino->cantidadSeleccionado){
+                cout << "1: " << sm->cantidadSeleccionado << endl;
+                cout << "2: " << siguienteNodoRegistroVino->cantidadSeleccionado << endl;
+                NodoRegistroVino* temp;
+                temp = siguienteNodoRegistroVino;
+                siguienteNodoRegistroVino = sm;
+                sm = temp;
+                changed = true;
+            }
+            sm = sm->SiguienteNodoRegistroVino;
+        }
+    }
+}
+
 void printRankingVinosPerYear(ListaRegistroVino* list){
     NodoRegistroVino* sm = list->primerNodoRegistroVino;
     while (sm != NULL) {
@@ -230,15 +253,14 @@ void rankingVinosPerYear(ListaSelecciones* list, int year){
   while(node != NULL){
     SeleccionMensual* seleccionMensual = node->elementoSeleccion;
     if(seleccionMensual->anio == year){
-      //cout <<  "year: " << seleccionMensual->anio << endl;
       for(int i = 0; i <= 5; i++){
         contarVino(listaRegistroVino, seleccionMensual->idsVinos[i]);
-        //cout << "id:" << seleccionMensual->idsVinos[i] << endl;
       }
     }
     node = node->sigSeleccion;
   }
-  printRankingVinosPerYear(listaRegistroVino);
+    sortRankingVinos(listaRegistroVino);
+    printRankingVinosPerYear(listaRegistroVino);
 }
 
 void rankingGeneralDeVinosUltimoYear(ListaSelecciones* list){
