@@ -38,12 +38,16 @@
 		<Unit filename="Funciones.h" />
 		<Unit filename="Lista.cpp" />
 		<Unit filename="Lista.h" />
+		<Unit filename="ListaRegistroVino.cpp" />
+		<Unit filename="ListaRegistroVino.h" />
 		<Unit filename="ListaSelecciones.cpp" />
 		<Unit filename="ListaSelecciones.h" />
 		<Unit filename="ListaUsuario.cpp" />
 		<Unit filename="ListaUsuario.h" />
 		<Unit filename="ListaVinos.cpp" />
 		<Unit filename="ListaVinos.h" />
+		<Unit filename="RegistroVino.cpp" />
+		<Unit filename="RegistroVino.h" />
 		<Unit filename="SeleccionMensual.cpp" />
 		<Unit filename="SeleccionMensual.h" />
 		<Unit filename="Usuario.cpp" />

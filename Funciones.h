@@ -3,8 +3,8 @@
 #include <string>
 using namespace std;
 
-string eliminarEspaciosDelComienzoYFinal(string cadena);
-string eliminarEspacios(string cadena);
+string eliminarEspaciosDelComienzo(string cadena);
+string eliminarEspaciosDelFinal(string cadena);
 string stringToNumber(string cadena);
 
 

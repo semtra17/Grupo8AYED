@@ -89,25 +89,25 @@ NodoVino* cargarNodoVinoConArchivo(string line){
 
         stringstream ss(line);
         getline(ss, auxIdVino, '-');
-        idVino = eliminarEspacios(auxIdVino);
+        idVino = eliminarEspaciosDelComienzo(auxIdVino);
         getline(ss, auxEtiqueta, '-');
-        etiqueta = eliminarEspacios(auxEtiqueta);
+        etiqueta = eliminarEspaciosDelComienzo(auxEtiqueta);
 
         getline(ss, auxBodega, '-');
-        bodega = eliminarEspacios(auxBodega);
+        bodega = eliminarEspaciosDelComienzo(auxBodega);
 
         getline(ss, auxSegmento, '-');
-        segmentoDelVino = eliminarEspacios(auxSegmento);
+        segmentoDelVino = eliminarEspaciosDelComienzo(auxSegmento);
 
         getline(ss, auxVarietal, '-');
-        varietal = eliminarEspacios(auxVarietal);
+        varietal = eliminarEspaciosDelComienzo(auxVarietal);
 
         getline(ss, auxAnioCosecha, '-');
-        anioCosecha = eliminarEspacios(auxAnioCosecha);
+        anioCosecha = eliminarEspaciosDelComienzo(auxAnioCosecha);
 
 
         getline(ss, auxTerroir, ';');
-        terroir = eliminarEspacios(auxTerroir);
+        terroir = eliminarEspaciosDelComienzo(auxTerroir);
 
 
 //        Vino *v = crearVino(idVino,auxEtiqueta,auxBodega,auxSegmento,auxVarietal,auxAnioCosecha,auxTerroir);

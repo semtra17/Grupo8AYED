@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include "SeleccionMensual.h"
+#include "ListaRegistroVino.h";
 
 void printListaSelecciones(ListaSelecciones* list){
     NodoSeleccion* sm = list->primerSeleccion;
@@ -50,19 +51,18 @@ NodoSeleccion* cargarNodoSeleccionConArchivo(string line){
 
     stringstream ss(line);
     getline(ss, auxIdSelecMen, '-');
-//        idSeleccionMen = eliminarEspacios(auxIdSelecMen);
+    idSeleccionMen = eliminarEspaciosDelComienzo(auxIdSelecMen);
     idSeleccionMen = auxIdSelecMen;
 
     getline(ss, auxMes, '-');
-//        mes = eliminarEspacios(auxMes);
-    mes = auxMes;
+    mes = eliminarEspaciosDelComienzo(auxMes);
 
     getline(ss, auxAnio, '-');
     anio = stoi(auxAnio);
 
     for(int i =0; i <= 5; i++){
           getline(ss, auxIdsVinos[i], '-');
-          idsVinos[i] = stringToNumber(auxIdsVinos[i]);
+          idsVinos[i] = eliminarEspaciosDelComienzo(auxIdsVinos[i]);
     }
 
     SeleccionMensual *sm = crearSeleccionMensual(idSeleccionMen,mes,anio,idsVinos);
@@ -141,128 +141,3 @@ void removeSelecMen(ListaSelecciones* list, SeleccionMensual *s){
 }
 //new code for extract
 
-struct NodoRegistroVino{
-  std::string idVino;
-  int cantidadSeleccionado;
-  NodoRegistroVino* SiguienteNodoRegistroVino;
-};
-
-struct ListaRegistroVino
-{
-	NodoRegistroVino* primerNodoRegistroVino;
-};
-
-ListaRegistroVino* newListaRegistroVino(){
-	ListaRegistroVino *list = new ListaRegistroVino();
-	list->primerNodoRegistroVino = NULL;
-	return list;
-}
-
-NodoRegistroVino* newNodoRegistroVino(string idVino){
-	NodoRegistroVino *node = new NodoRegistroVino();
-	node->idVino = idVino;
-	node->cantidadSeleccionado = 1;
-    node->SiguienteNodoRegistroVino = NULL;
-	return node;
-}
-
-NodoRegistroVino* buscarRegristoVinoPorId(ListaRegistroVino* list, string idVino){
-    NodoRegistroVino* n = list->primerNodoRegistroVino;
-    NodoRegistroVino* temp = NULL;
-    while (n != NULL) {
-      if(n->idVino == idVino){
-        temp = n;
-      }
-      n = n->SiguienteNodoRegistroVino;
-    }
-    return temp;
-}
-
-void linkToNext(NodoRegistroVino* currentNode, NodoRegistroVino* nodeToAdd){
-	if (currentNode->SiguienteNodoRegistroVino == NULL){
-		currentNode->SiguienteNodoRegistroVino = nodeToAdd;
-	}else{
-	 	linkToNext(currentNode->SiguienteNodoRegistroVino, nodeToAdd);
-	}
-}
-
-void addNodeToList(ListaRegistroVino* list, NodoRegistroVino* nodeToAdd){
-  if(list->primerNodoRegistroVino == NULL){
-    list->primerNodoRegistroVino = nodeToAdd;
-  }else{
-    linkToNext(list->primerNodoRegistroVino, nodeToAdd);
-  }
-}
-
-void agregarNodoRegistro(ListaRegistroVino* list, string idVino){
-  NodoRegistroVino* nuevowNodoRegistroVinoNdo = newNodoRegistroVino(idVino);
-  addNodeToList(list, nuevowNodoRegistroVinoNdo);
-}
-
-void contarVino(ListaRegistroVino* list, string idVino){
-  NodoRegistroVino* nodoRegistroVino = buscarRegristoVinoPorId(list, idVino);
-  //cout <<  "NodoRegistroVino: " << nodoRegistroVino->idVino << endl;
-  if(nodoRegistroVino != NULL){
-    nodoRegistroVino->cantidadSeleccionado++;
-  }else{
-    agregarNodoRegistro(list, idVino);
-  }
-}
-
-void printRegistroVino(NodoRegistroVino *r){
-    cout << "======================================" << endl;
-    cout <<  "idVino: " << r->idVino << endl;
-    cout << "Cantidad: " << r->cantidadSeleccionado << endl;
-}
-
-void sortRankingVinos(ListaRegistroVino* list){
-    NodoRegistroVino* sm = list->primerNodoRegistroVino;
-    bool changed = true;
-    while(changed == true){
-        changed = false;
-        cout << "changed" << endl;
-        while (sm->SiguienteNodoRegistroVino != NULL) {
-            cout << "Cantidad: " << sm->cantidadSeleccionado << endl;
-            NodoRegistroVino* siguienteNodoRegistroVino = sm->SiguienteNodoRegistroVino;
-            if(sm->cantidadSeleccionado < siguienteNodoRegistroVino->cantidadSeleccionado){
-                cout << "1: " << sm->cantidadSeleccionado << endl;
-                cout << "2: " << siguienteNodoRegistroVino->cantidadSeleccionado << endl;
-                NodoRegistroVino* temp;
-                temp = siguienteNodoRegistroVino;
-                siguienteNodoRegistroVino = sm;
-                sm = temp;
-                changed = true;
-            }
-            sm = sm->SiguienteNodoRegistroVino;
-        }
-    }
-}
-
-void printRankingVinosPerYear(ListaRegistroVino* list){
-    NodoRegistroVino* sm = list->primerNodoRegistroVino;
-    while (sm != NULL) {
-        printRegistroVino(sm);
-        sm = sm->SiguienteNodoRegistroVino;
-    }
-}
-
-void rankingVinosPerYear(ListaSelecciones* list, int year){
-  ListaRegistroVino* listaRegistroVino = newListaRegistroVino();
-  NodoSeleccion* node = list->primerSeleccion;
-
-  while(node != NULL){
-    SeleccionMensual* seleccionMensual = node->elementoSeleccion;
-    if(seleccionMensual->anio == year){
-      for(int i = 0; i <= 5; i++){
-        contarVino(listaRegistroVino, seleccionMensual->idsVinos[i]);
-      }
-    }
-    node = node->sigSeleccion;
-  }
-    sortRankingVinos(listaRegistroVino);
-    printRankingVinosPerYear(listaRegistroVino);
-}
-
-void rankingGeneralDeVinosUltimoYear(ListaSelecciones* list){
-    rankingVinosPerYear(list, 2021);
-}

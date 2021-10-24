@@ -41,11 +41,11 @@ NodoUsuario* cargarNodoUsuarioConArchivo(string line){
 
         stringstream ss(line);
         getline(ss, auxId_usuario, '-');
-        id_usuario = eliminarEspacios(auxId_usuario);
+        id_usuario = eliminarEspaciosDelComienzo(auxId_usuario);
         getline(ss, auxNombrApellido, '-');
-        nombrApellido = eliminarEspacios(auxNombrApellido);
+        nombrApellido = eliminarEspaciosDelComienzo(auxNombrApellido);
         getline(ss, auxDireccion, '-');
-        direccion = eliminarEspacios(auxDireccion);
+        direccion = eliminarEspaciosDelComienzo(auxDireccion);
         getline(ss, aux, '-');
         edad= stoi(aux);
 
