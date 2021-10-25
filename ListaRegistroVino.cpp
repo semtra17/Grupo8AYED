@@ -76,9 +76,8 @@ void contarVino(ListaRegistroVino* list, string idVino){
   }
 }
 
-
-void rankingVinosPerYearAsc(ListaSelecciones* list, int year){
-  ListaRegistroVino* listaRegistroVino = newListaRegistroVino();
+ListaRegistroVino * rankingVinosPerYearDes(ListaSelecciones* list, int year){
+ ListaRegistroVino* listaRegistroVino = newListaRegistroVino();
   NodoSeleccion* node = list->primerSeleccion;
 
   while(node != NULL){
@@ -91,10 +90,12 @@ void rankingVinosPerYearAsc(ListaSelecciones* list, int year){
     node = node->sigSeleccion;
   }
     ordenarRegistrosAsc(listaRegistroVino);
-    printRankingVinosPerYear(listaRegistroVino);
+    return listaRegistroVino;
+
 }
 
-void rankingVinosPerYearDes(ListaSelecciones* list, int year){
+ListaRegistroVino * rankingVinosPerYearAsc(ListaSelecciones* list, int year){
+
   ListaRegistroVino* listaRegistroVino = newListaRegistroVino();
   NodoSeleccion* node = list->primerSeleccion;
 
@@ -109,8 +110,14 @@ void rankingVinosPerYearDes(ListaSelecciones* list, int year){
   }
 
     ordenarRegistrosDes(listaRegistroVino);
-    printRankingVinosPerYear(listaRegistroVino);
+    return listaRegistroVino;
+
 }
+
+
+
+
+
 
 void ordenarRegistrosAsc(ListaRegistroVino * lr){
     NodoRegistroVino * nr = lr->primerNodoRegistroVino;
@@ -159,13 +166,39 @@ RegistroVino * obtenerPrimerRegistroVino(ListaRegistroVino * lr){
     return lr->primerNodoRegistroVino->registroVino;
 }
 
-void printRankingVinosPerYear(ListaRegistroVino* list){
+void printRankingVinosPerYearAsc(ListaRegistroVino* list){
+          cout << "==========================" << endl;
+    cout << "Ranking de Vinos Ascendente" << endl;
+
     NodoRegistroVino* sm = list->primerNodoRegistroVino;
+    int i = 1;
     while (sm != NULL) {
         printNodoRegistroVino(sm);
+        cout <<  "Puesto: " << i++ << endl;
         sm = sm->SiguienteNodoRegistroVino;
     }
 }
+void printRankingVinosPerYearDes(ListaRegistroVino* list){
+
+    cout << "==========================" << endl;
+    cout << "Ranking de Vinos Descendente" << endl;
+    NodoRegistroVino* sm = list->primerNodoRegistroVino;
+    int i =  list->tamanio;
+    while (sm != NULL) {
+
+        printNodoRegistroVino(sm);
+        cout <<  "Puesto: " << i-- << endl;
+        sm = sm->SiguienteNodoRegistroVino;
+    }
+}
+void printListaRegistrosVinos(ListaRegistroVino* list){
+
+   NodoRegistroVino* sm = list->primerNodoRegistroVino;
+    while (sm != NULL) {
+        printNodoRegistroVino(sm);
+        sm = sm->SiguienteNodoRegistroVino;
+    }}
+
 
 void printNodoRegistroVino(NodoRegistroVino *nr){
    printRegistroVino(nr->registroVino);

@@ -277,3 +277,143 @@
 	<iostream>
 	<string.h>
 
+1635119253 source:c:\users\luciano\desktop\grupo8ayed\funciones.cpp
+	"Funciones.h"
+	<cstring>
+	<sstream>
+	<iostream>
+	<string>
+
+1635119253 c:\users\luciano\desktop\grupo8ayed\funciones.h
+	<string>
+
+1635119253 source:c:\users\luciano\desktop\grupo8ayed\lista.cpp
+	"Lista.h"
+	<iostream>
+
+1635119253 c:\users\luciano\desktop\grupo8ayed\lista.h
+
+1635123362 source:c:\users\luciano\desktop\grupo8ayed\listaregistrovino.cpp
+	"ListaRegistroVino.h"
+	"SeleccionMensual.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"Funciones.h"
+	"RegistroVino.h"
+
+1635122813 c:\users\luciano\desktop\grupo8ayed\listaregistrovino.h
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSelecciones.h"
+	"RegistroVino.h"
+
+1635119253 c:\users\luciano\desktop\grupo8ayed\listaselecciones.h
+	"SeleccionMensual.h"
+
+1635119253 c:\users\luciano\desktop\grupo8ayed\seleccionmensual.h
+	<stdio.h>
+	<string.h>
+	<string>
+
+1635122126 c:\users\luciano\desktop\grupo8ayed\registrovino.h
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+
+1635119253 source:c:\users\luciano\desktop\grupo8ayed\listaselecciones.cpp
+	"Funciones.h"
+	"ListaSelecciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"SeleccionMensual.h"
+	"ListaRegistroVino.h"
+
+1635119253 source:c:\users\luciano\desktop\grupo8ayed\listausuario.cpp
+	"ListaUsuario.h"
+	"Funciones.h"
+	"Usuario.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1635119253 c:\users\luciano\desktop\grupo8ayed\listausuario.h
+	"Usuario.h"
+
+1635119253 c:\users\luciano\desktop\grupo8ayed\usuario.h
+	<stdio.h>
+	<string.h>
+	<string>
+
+1635121656 source:c:\users\luciano\desktop\grupo8ayed\listavinos.cpp
+	"Vino.h"
+	"ListaVinos.h"
+	"Funciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1635119253 c:\users\luciano\desktop\grupo8ayed\vino.h
+	<string>
+
+1635121350 c:\users\luciano\desktop\grupo8ayed\listavinos.h
+	"Vino.h"
+
+1635123694 source:c:\users\luciano\desktop\grupo8ayed\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	"Lista.h"
+	"ListaUsuario.h"
+	"ListaVinos.h"
+	"ListaSelecciones.h"
+	"SeleccionMensual.h"
+	"RegistroVino.h"
+	"ListaRegistroVino.h"
+	"ListaBodega.h"
+	<sstream>
+	"Funciones.h"
+
+1635122133 source:c:\users\luciano\desktop\grupo8ayed\registrovino.cpp
+	"RegistroVino.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1635119253 source:c:\users\luciano\desktop\grupo8ayed\seleccionmensual.cpp
+	"SeleccionMensual.h"
+	<iostream>
+
+1635119253 source:c:\users\luciano\desktop\grupo8ayed\usuario.cpp
+	"Usuario.h"
+	<iostream>
+
+1635119253 source:c:\users\luciano\desktop\grupo8ayed\vino.cpp
+	"Vino.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+
+1635121973 source:c:\users\luciano\desktop\grupo8ayed\listabodega.cpp
+	"ListaBodega.h"
+	"ListaSelecciones.h"
+	"ListaVinos.h"
+	"ListaRegistroVino.h"
+
+1635123683 c:\users\luciano\desktop\grupo8ayed\listabodega.h
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSelecciones.h"
+	"ListaVinos.h"
+

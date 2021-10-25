@@ -169,7 +169,7 @@ void agregarVino(ListaVinos* list, Vino * vinoToAdd){
 
 }
 
-NodoVino* findVinoById(ListaVinos* list, string idVino){
+NodoVino* findNodoVinoById(ListaVinos* list, string idVino){
 
     NodoVino* nv = list->primerVino;
       NodoVino* temp;
@@ -180,6 +180,18 @@ NodoVino* findVinoById(ListaVinos* list, string idVino){
         nv = nv->sigVino;
       }
       return temp;
+}
+Vino* findVinoById(ListaVinos* list, string idVino){
+
+    NodoVino* nv = list->primerVino;
+      NodoVino* temp;
+      while (nv != NULL) {
+        if(nv->elementoVino->idVino == idVino){
+          temp = nv;
+        }
+        nv = nv->sigVino;
+      }
+      return temp->elementoVino;
 }
 
 void removeNode(ListaVinos* list, NodoVino* nodeToRemove){
@@ -201,7 +213,7 @@ void removeNode(ListaVinos* list, NodoVino* nodeToRemove){
 
 void removeVino(ListaVinos* list, Vino *v){
 
-    NodoVino* nodeToRemove = findVinoById(list, v->idVino);
+    NodoVino* nodeToRemove = findNodoVinoById(list, v->idVino);
     removeNode(list, nodeToRemove);
 
 }

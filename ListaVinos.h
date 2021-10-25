@@ -31,7 +31,8 @@ void agregarNodoVino(ListaVinos* list, NodoVino* nodeToAdd);
 
 void agregarVino(ListaVinos* list, Vino * vinoToAdd);
 
-NodoVino* findVinoById(ListaVinos* list, string idVIno);
+NodoVino* findNodoVinoById(ListaVinos* list, string idVIno);
+Vino* findVinoById(ListaVinos* list, string idVIno);
 
 void removeNode(ListaVinos* list, NodoVino* nodeToRemove);
 

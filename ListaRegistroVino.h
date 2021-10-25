@@ -34,9 +34,10 @@ void contarVino(ListaRegistroVino* list, string idVino);
 
 void sortRankingVinos(ListaRegistroVino* list);
 
-void rankingVinosPerYearDes(ListaSelecciones* list, int year);
-void rankingVinosPerYearAsc(ListaSelecciones* list, int year);
 
+
+ListaRegistroVino * rankingVinosPerYearDes(ListaSelecciones* list, int year);
+ListaRegistroVino * rankingVinosPerYearAsc(ListaSelecciones* list, int year);
 
 void ordenarRegistrosAsc(ListaRegistroVino * lr);
 void ordenarRegistrosDes(ListaRegistroVino * lr);
@@ -48,5 +49,8 @@ RegistroVino * obtenerPrimerRegistroVino(ListaRegistroVino * lr);
 
 //PRINTS
 void printNodoRegistroVino(NodoRegistroVino *nr);
-void printRankingVinosPerYear(ListaRegistroVino* list);
+void printRankingVinosPerYearDes(ListaRegistroVino* list);
+void printRankingVinosPerYearAsc(ListaRegistroVino* list);
+
+void printListaRegistrosVinos(ListaRegistroVino* list);
 #endif // LISTAREGISTROVINO_H_INCLUDED

@@ -9,6 +9,7 @@
 #include "SeleccionMensual.h"
 #include "RegistroVino.h"
 #include "ListaRegistroVino.h"
+#include "ListaBodega.h"
 #include <sstream>
 #include "Funciones.h"
 
@@ -31,8 +32,9 @@ int main()
     printListaSelecciones(LISTA_SELECCION_MENSUAL);
 
 
-    rankingVinosPerYearAsc(LISTA_SELECCION_MENSUAL,2021);
-    rankingVinosPerYearDes(LISTA_SELECCION_MENSUAL,2021);
+//        printRankingVinosPerYearAsc(rankingVinosPerYearAsc(LISTA_SELECCION_MENSUAL,2021));
+//      printRankingVinosPerYearDes(rankingVinosPerYearDes(LISTA_SELECCION_MENSUAL,2021));
+    printRankingBodegasPerYearDes(LISTA_SELECCION_MENSUAL,LISTA_VINOS, 2021);
 
 }
 
