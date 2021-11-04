@@ -37,4 +37,3 @@ void printRegistroVino(RegistroVino *rv){
     cout <<  "idVino: " << getIdRegistroVino(rv) << endl;
     cout << "Cantidad: " << getCantidadRegistroVino(rv) << endl;
 }
-

@@ -173,7 +173,7 @@ NodoVino* findNodoVinoById(ListaVinos* list, string idVino){
 
     NodoVino* nv = list->primerVino;
       NodoVino* temp;
-      while (nv != NULL) {
+      while (nv != NULL || temp != NULL) {
         if(nv->elementoVino->idVino == idVino){
           temp = nv;
         }

@@ -277,12 +277,86 @@
 	<iostream>
 	<string.h>
 
+1635980119 ated upstream
+	"ListaBodega.h"
+	<sstream>
+	"Funciones.h"
+	"ListaVinos.h"
+
 1635119253 source:c:\users\luciano\desktop\grupo8ayed\funciones.cpp
+
+1632783946 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Bodega.cpp
+
+1635117949 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Funciones.cpp
+
+1635380570 shed changes
 	"Funciones.h"
 	<cstring>
 	<sstream>
 	<iostream>
 	<string>
+	"ListaRegistroVino.h"
+	"SeleccionMensual.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"Funciones.h"
+	"RegistroVino.h"
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSelecciones.h"
+	"RegistroVino.h"
+	<stdio.h>
+	<string.h>
+	<string>
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	"ListaUsuario.h"
+	"Funciones.h"
+	"Usuario.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	<stdio.h>
+	<string.h>
+	<string>
+	"Vino.h"
+	"ListaVinos.h"
+	"Funciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	"Lista.h"
+	"ListaUsuario.h"
+	"ListaVinos.h"
+	"ListaSelecciones.h"
+	"SeleccionMensual.h"
+	"RegistroVino.h"
+	"ListaRegistroVino.h"
+	"RegistroVino.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"Vino.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSelecciones.h"
 
 1635119253 c:\users\luciano\desktop\grupo8ayed\funciones.h
 	<string>
@@ -294,6 +368,17 @@
 1635119253 c:\users\luciano\desktop\grupo8ayed\lista.h
 
 1635123362 source:c:\users\luciano\desktop\grupo8ayed\listaregistrovino.cpp
+
+1635117949 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Funciones.h
+	<string>
+
+1635117949 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Lista.cpp
+	"Lista.h"
+	<iostream>
+
+1635117949 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Lista.h
+
+1635980613 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaRegistroVino.cpp
 	"ListaRegistroVino.h"
 	"SeleccionMensual.h"
 	<fstream>
@@ -304,6 +389,8 @@
 	"RegistroVino.h"
 
 1635122813 c:\users\luciano\desktop\grupo8ayed\listaregistrovino.h
+
+1635980610 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaRegistroVino.h
 	<stdio.h>
 	<string.h>
 	<string>
@@ -314,11 +401,15 @@
 	"SeleccionMensual.h"
 
 1635119253 c:\users\luciano\desktop\grupo8ayed\seleccionmensual.h
-	<stdio.h>
-	<string.h>
-	<string>
+
+1635117949 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaSelecciones.h
+	"SeleccionMensual.h"
+
+1634083751 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/SeleccionMensual.h
 
 1635122126 c:\users\luciano\desktop\grupo8ayed\registrovino.h
+
+1635980610 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/RegistroVino.h
 	<stdio.h>
 	<stdlib.h>
 	<iostream>
@@ -335,23 +426,22 @@
 	"ListaRegistroVino.h"
 
 1635119253 source:c:\users\luciano\desktop\grupo8ayed\listausuario.cpp
-	"ListaUsuario.h"
-	"Funciones.h"
-	"Usuario.h"
-	<fstream>
-	<stdlib.h>
-	<iostream>
-	<sstream>
+
+1635117949 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaUsuario.cpp
 
 1635119253 c:\users\luciano\desktop\grupo8ayed\listausuario.h
 	"Usuario.h"
 
 1635119253 c:\users\luciano\desktop\grupo8ayed\usuario.h
-	<stdio.h>
-	<string.h>
-	<string>
+
+1633469756 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaUsuario.h
+	"Usuario.h"
+
+1633056062 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Usuario.h
 
 1635121656 source:c:\users\luciano\desktop\grupo8ayed\listavinos.cpp
+
+1635980613 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaVinos.cpp
 	"Vino.h"
 	"ListaVinos.h"
 	"Funciones.h"
@@ -367,6 +457,14 @@
 	"Vino.h"
 
 1635123694 source:c:\users\luciano\desktop\grupo8ayed\main.cpp
+
+1633056062 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Vino.h
+	<string>
+
+1635980610 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaVinos.h
+	"Vino.h"
+
+1635983229 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/main.cpp
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -379,10 +477,16 @@
 	"RegistroVino.h"
 	"ListaRegistroVino.h"
 	"ListaBodega.h"
+	"RankingPerVarietal.h"
 	<sstream>
 	"Funciones.h"
 
 1635122133 source:c:\users\luciano\desktop\grupo8ayed\registrovino.cpp
+	"RankingPerVarietal.h"
+	<sstream>
+	"Funciones.h"
+
+1635983152 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/RegistroVino.cpp
 	"RegistroVino.h"
 	<fstream>
 	<stdlib.h>
@@ -398,11 +502,16 @@
 	<iostream>
 
 1635119253 source:c:\users\luciano\desktop\grupo8ayed\vino.cpp
-	"Vino.h"
-	<stdio.h>
-	<stdlib.h>
+
+1633469756 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/SeleccionMensual.cpp
+	"SeleccionMensual.h"
 	<iostream>
-	<string.h>
+
+1633056062 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Usuario.cpp
+	"Usuario.h"
+	<iostream>
+
+1633056062 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/Vino.cpp
 
 1635121973 source:c:\users\luciano\desktop\grupo8ayed\listabodega.cpp
 	"ListaBodega.h"
@@ -411,6 +520,47 @@
 	"ListaRegistroVino.h"
 
 1635123683 c:\users\luciano\desktop\grupo8ayed\listabodega.h
+
+1635980613 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaSelecciones.cpp
+	"Funciones.h"
+	"ListaSelecciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"SeleccionMensual.h"
+	"ListaRegistroVino.h"
+
+1635980813 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/RankingVinosPerVarietal.cpp
+	"ListaRegistroVino.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"Funciones.h"
+	"ListaVinos.h"
+	"Vino.h"
+	"ItemRankingPerVarietal.h"
+
+1635980119 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/RankingPerVarietal.h
+
+1635980119 s.h"
+
+1635381779 source:/home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ItemRankingPerVarietal.cpp
+	"ItemRankingPerVarietal.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1635380570 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ItemRankingPerVarietal.h
+	"ItemRankingPerVarietal.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+
+1635980610 /home/gonza/Facultad/algoritmos-estructura/Grupo8AYED/ListaBodega.h
 	<stdio.h>
 	<string.h>
 	<string>

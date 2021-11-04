@@ -8,8 +8,6 @@
 #include "RegistroVino.h"
 using namespace std;
 
-
-
 ListaRegistroVino* newListaRegistroVino(){
 	ListaRegistroVino *list = new ListaRegistroVino();
 	list->primerNodoRegistroVino = NULL;

@@ -5,7 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include "SeleccionMensual.h"
-#include "ListaRegistroVino.h";
+#include "ListaRegistroVino.h"
 
 void printListaSelecciones(ListaSelecciones* list){
     NodoSeleccion* sm = list->primerSeleccion;
