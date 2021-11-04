@@ -101,7 +101,7 @@ void ordenarRegistrosDes(ListaDoblEnl * lr){
 }
 
 
-ListaDoblEnl * rankingVinosPerYearDes(ListaSimpEnl* list, int year){
+ListaDoblEnl * rankingVinosPerYear(ListaSimpEnl* list, int year){
     ListaDoblEnl* LISTA_REGISTRO_VINO = newListaDoblEnl();
     Nodo* node = list->head;
 
@@ -114,9 +114,41 @@ ListaDoblEnl * rankingVinosPerYearDes(ListaSimpEnl* list, int year){
     }
     node = node->nextNode;
   }
-    ordenarRegistrosAsc(LISTA_REGISTRO_VINO);
     return LISTA_REGISTRO_VINO;
 
+}
+
+
+
+
+
+
+
+void printRankingVinosPerYearAsc(ListaDoblEnl* list){
+    ordenarRegistrosAsc(list);
+    cout << "==========================" << endl;
+    cout << "Ranking de Vinos Ascendente" << endl;
+    NodoDobl* sm = list->head;
+    int i = 1;
+    while (sm != NULL) {
+        printRegistroVino((RegistroVino*) sm->data);
+        cout <<  "Puesto: " << i++ << endl;
+        sm = sm->nextNode;
+    }
+}
+void printRankingVinosPerYearDes(ListaDoblEnl* list){
+
+    ordenarRegistrosDes(list);
+    cout << "==========================" << endl;
+    cout << "Ranking de Vinos Descendente" << endl;
+    NodoDobl* sm = list->head;
+    int i =  list->tam;
+    while (sm != NULL) {
+
+        printRegistroVino((RegistroVino*) sm->data);
+        cout <<  "Puesto: " << i-- << endl;
+        sm = sm->nextNode;
+    }
 }
 
 
@@ -126,4 +158,15 @@ void printRegistroVino(RegistroVino *rv){
     cout <<  "idVino: " << getIdRegistroVino(rv) << endl;
     cout << "Cantidad: " << getCantidadRegistroVino(rv) << endl;
 }
+
+void printListaRegistrosVinos(ListaDoblEnl* list){
+
+       NodoDobl* sm = list->head;
+        while (sm != NULL) {
+            printRegistroVino((RegistroVino*) sm->data);
+            sm = sm->nextNode;
+    }
+
+}
+
 

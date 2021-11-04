@@ -6,8 +6,10 @@
 #include <sstream>
 #include "Funciones.h"
 #include "ListaSimpEnl.h"
+#include "ListaDoblEnl.h"
 #include "Vino.h"
 #include "Usuario.h"
+#include "RegistroVino.h"
 #include "SeleccionMensual.h"
 
 using namespace std;
@@ -49,10 +51,12 @@ int main()
 //        printVino(findVinoById(LISTA_VINOS, "81633"));
 //        printListaVino( LISTA_VINOS);
 
-        ListaSimpEnl * LISTA_SELECCION_MENSUAL = newListSimpEnl();
-        cargarListaSelDesdeArchivo(LISTA_SELECCION_MENSUAL);
-        printListaSelecMen(LISTA_SELECCION_MENSUAL);
-
+//        ListaSimpEnl * LISTA_SELECCION_MENSUAL = newListSimpEnl();
+//        cargarListaSelDesdeArchivo(LISTA_SELECCION_MENSUAL);
+//        printListaSelecMen(LISTA_SELECCION_MENSUAL);
+//        ListaDoblEnl * LISTA_REGISTRO_VINO = rankingVinosPerYear(LISTA_SELECCION_MENSUAL,2021);
+//        printRankingVinosPerYearDes(LISTA_REGISTRO_VINO);
+//        printRankingVinosPerYearAsc(LISTA_REGISTRO_VINO);
 
 
 

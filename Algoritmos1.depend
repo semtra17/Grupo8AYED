@@ -215,7 +215,7 @@
 1635942039 c:\myprojects\grupo8ayed\listavinos.h
 	"Vino.h"
 
-1635997146 source:c:\myprojects\grupo8ayed\main.cpp
+1636054990 source:c:\myprojects\grupo8ayed\main.cpp
 	<iostream>
 	<fstream>
 	<stdlib.h>
@@ -224,8 +224,10 @@
 	<sstream>
 	"Funciones.h"
 	"ListaSimpEnl.h"
+	"ListaDoblEnl.h"
 	"Vino.h"
 	"Usuario.h"
+	"RegistroVino.h"
 	"SeleccionMensual.h"
 
 1635947912 c:\myprojects\grupo8ayed\lista.h
@@ -282,4 +284,22 @@
 	"ListaDoblEnl.h"
 
 1635999317 c:\myprojects\grupo8ayed\listadoblenl.h
+
+1636055751 source:c:\myprojects\grupo8ayed\registrovino.cpp
+	"RegistroVino.h"
+	"ListaDoblEnl.h"
+	"ListaSimpEnl.h"
+	"SeleccionMensual.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1636055788 c:\myprojects\grupo8ayed\registrovino.h
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	"ListaDoblEnl.h"
+	"ListaSimpEnl.h"
 
