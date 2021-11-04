@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
+#include "ListaSimpEnl.h"
 using namespace std;
 
 struct Usuario{
@@ -29,13 +30,16 @@ Usuario* crearUsuario(string nombreYapellido, int edad,string direccion);
 Usuario* crearUsuario(string id_usuario, string nombreYapellido, int edad, string direccion);
 
 
+void* cargarUsuarioConArchivo(string line);
+void cargarListaUsuarioDesdeArchivo(ListaSimpEnl* list);
+
 
 //---------------------------------------------------------------------
 //DESTRUCTOR
 
 //PRE: Usuario* u debe estar cargado con la funcion crearUsuario
 //POST: se libera el epacio de la memoria del Usuario* u
-
+void removeUsuarioByIdFromList(ListaSimpEnl* list, string idUsuario);
 void borrarUsuario(Usuario* u);
 
 //GETS
@@ -58,13 +62,20 @@ void setIdUsuario(Usuario *usuario, string id_usuario);
 void setNombreYapellido(Usuario * usuario, string nombreYapellido);
 void setEdad(Usuario * usuario, int edad);
 
+
+//BUSCADOR
+
+//PRE: "usuario" debe estar previamente cargado
+//POST muestra por pantalla cada atributo del usuario
+
+Usuario * findUsuarioById(ListaSimpEnl* list, string idUsuario);
+
 //UTILIDADES
 
 //PRE: "usuario" debe estar previamente cargado
 //POST muestra por pantalla cada atributo del usuario
 
 void printUsuario(Usuario *u);
-
-
+void printListaUsuario(ListaSimpEnl* list);
 
 #endif // USUARIO_H_INCLUDED

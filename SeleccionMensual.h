@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
+#include "ListaSimpEnl.h"
 
 using namespace std;
 
@@ -30,6 +31,12 @@ SeleccionMensual * crearSeleccionMensual(string idSelecMen, string mes, int anio
 SeleccionMensual * crearSeleccionMensual( string mes, int anio, string idsVinos[6]);
 
 
+void* cargarSelMenConArchivo(string line);
+void cargarListaSelDesdeArchivo(ListaSimpEnl* list);
+
+
+
+
 //---------------------------------------------------------------------
 //DESTRUCTOR
 
@@ -37,6 +44,9 @@ SeleccionMensual * crearSeleccionMensual( string mes, int anio, string idsVinos[
 //POST: se libera el espacio de memoria ocupado por SeleccionMensual *s
 
 void borrarSeleccionMen(SeleccionMensual* s);
+
+
+void removeSelMenByIdFromList(ListaSimpEnl* list, string idSelec);
 
 //GETS
 
@@ -60,6 +70,15 @@ void setMesSelecMen(SeleccionMensual *s, string mes);
 void setAnioSelecMen(SeleccionMensual *s,int anio);
 void setIdsVinos(SeleccionMensual *s,string idsVinos[6]);
 
+
+//------------------------------------------------------
+//BUSCADOR
+
+
+SeleccionMensual * findSelecMenById(ListaSimpEnl* list, string idSelec);
+
+
+
 //UTILIDADES
 
 //PRE: "s" debe estar previamente cargado
@@ -70,6 +89,8 @@ void printSelecMen(SeleccionMensual *s);
 //PRE: "idsVinos" debe estar previamente cargado
 //POST muestra por pantalla los ids alojados en el arreglo de string
 void printIdsVinos(string idsVinos[6]);
+
+void printListaSelecMen(ListaSimpEnl* list);
 
 
 #endif // SELECCIONMENSUAL_H_INCLUDED

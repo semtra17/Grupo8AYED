@@ -149,3 +149,137 @@
 1633045839 c:\users\luciano\desktop\algoritmos1\listaselecciones.h
 	"SeleccionMensual.h"
 
+1635942039 source:c:\myprojects\grupo8ayed\bodega.cpp
+
+1635957537 source:c:\myprojects\grupo8ayed\funciones.cpp
+	"Funciones.h"
+	<cstring>
+	<iostream>
+	<string>
+
+1635957528 c:\myprojects\grupo8ayed\funciones.h
+	<string>
+
+1635957644 source:c:\myprojects\grupo8ayed\listaselecciones.cpp
+	"Funciones.h"
+	"ListaSelecciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"SeleccionMensual.h"
+
+1635942039 c:\myprojects\grupo8ayed\listaselecciones.h
+	"SeleccionMensual.h"
+
+1635996151 c:\myprojects\grupo8ayed\seleccionmensual.h
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSimpEnl.h"
+
+1635953040 source:c:\myprojects\grupo8ayed\listausuario.cpp
+	"ListaUsuario.h"
+	"Funciones.h"
+	"Usuario.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1635942039 c:\myprojects\grupo8ayed\listausuario.h
+	"Usuario.h"
+
+1635953538 c:\myprojects\grupo8ayed\usuario.h
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSimpEnl.h"
+
+1635957676 source:c:\myprojects\grupo8ayed\listavinos.cpp
+	"Vino.h"
+	"ListaVinos.h"
+	"Funciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	<stdio.h>
+	<string.h>
+	<string>
+
+1635957026 c:\myprojects\grupo8ayed\vino.h
+	<string>
+	"ListaSimpEnl.h"
+
+1635942039 c:\myprojects\grupo8ayed\listavinos.h
+	"Vino.h"
+
+1635997146 source:c:\myprojects\grupo8ayed\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	"Lista.h"
+	<sstream>
+	"Funciones.h"
+	"ListaSimpEnl.h"
+	"Vino.h"
+	"Usuario.h"
+	"SeleccionMensual.h"
+
+1635947912 c:\myprojects\grupo8ayed\lista.h
+
+1635997309 source:c:\myprojects\grupo8ayed\seleccionmensual.cpp
+	"SeleccionMensual.h"
+	"Funciones.h"
+	<iostream>
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+
+1635999525 source:c:\myprojects\grupo8ayed\usuario.cpp
+	"Usuario.h"
+	"ListaSimpEnl.h"
+	"Funciones.h"
+	<iostream>
+	<sstream>
+	<fstream>
+
+1635996886 source:c:\myprojects\grupo8ayed\vino.cpp
+	"Vino.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	<fstream>
+	<sstream>
+	"Funciones.h"
+	"ListaSimpEnl.h"
+
+1635948154 source:c:\myprojects\grupo8ayed\listasimpenl.cpp
+	"ListaSimpEnl.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+
+1635948150 c:\myprojects\grupo8ayed\listasimpenl.h
+
+1635951989 source:c:\myprojects\grupo8ayed\lista.cpp
+	"Lista.h"
+	<iostream>
+
+1635999417 source:c:\myprojects\grupo8ayed\listadoblenl.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+	"ListaDoblEnl.h"
+
+1635999317 c:\myprojects\grupo8ayed\listadoblenl.h
+
