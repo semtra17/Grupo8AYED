@@ -165,7 +165,7 @@ RegistroVino * obtenerPrimerRegistroVino(ListaRegistroVino * lr){
 }
 
 void printRankingVinosPerYearAsc(ListaRegistroVino* list){
-          cout << "==========================" << endl;
+    cout << "==========================" << endl;
     cout << "Ranking de Vinos Ascendente" << endl;
 
     NodoRegistroVino* sm = list->primerNodoRegistroVino;

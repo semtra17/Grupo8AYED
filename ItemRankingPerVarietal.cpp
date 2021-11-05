@@ -29,7 +29,7 @@ void eliminarItemRankingPerVarietal(ItemRankingPerVarietal *i){
 void printItemRankingPerVarietal(ItemRankingPerVarietal *i){
     cout << "======================================" << endl;
     cout <<  "Nombre: " << getNameItemRankingPerVarietal(i) << endl;
-    cout << "Cantidad: " << getCantidadItemRankingPerVarietal(i) << endl;
+    cout <<  "Cantidad: " << getCantidadItemRankingPerVarietal(i) << endl;
 }
 
 

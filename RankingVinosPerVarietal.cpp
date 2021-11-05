@@ -142,7 +142,6 @@ void rankingVinosPerVarietal(ListaSelecciones* listaSelecciones, ListaVinos* lis
             }
             if(edad > 50){
                 contarVinoPerVarietal(rankingVinosViejos, vino);
-                cout << "grande" << endl;
             }
         }
 
