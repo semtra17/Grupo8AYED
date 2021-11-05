@@ -14,6 +14,10 @@ struct RegistroVino{
     int cantidadSeleccionado;
 };
 
+struct RegistroBodega {
+    string bodega;
+};
+
 RegistroVino * crearRegistroVino(string idVino, int cantidadSeleccionado);
 string getIdRegistroVino(RegistroVino* rv);
 int getCantidadRegistroVino(RegistroVino* rv);
@@ -22,10 +26,15 @@ void setIdRegistroVino(RegistroVino *rv, int cantidadSeleccionado);
 void eliminarRegistroVino(RegistroVino *rv);
 void ordenarRegistrosAsc(ListaDoblEnl * lr);
 void ordenarRegistrosDes(ListaDoblEnl * lr);
-ListaDoblEnl * rankingVinosPerYear(ListaSimpEnl* list, int year);
-void printRankingVinosPerYearDes(ListaDoblEnl* list);
-void printRankingVinosPerYearAsc(ListaDoblEnl* list);
+ListaDoblEnl * rankingVinosPerYear(ListaSimpEnl* listaVinos, int year);
+void printRankingVinosPerYearDes(ListaDoblEnl* listaRegistros);
+void printRankingVinosPerYearAsc(ListaDoblEnl* listaRegistros);
 void printRegistroVino(RegistroVino *rv);
-void printListaRegistrosVinos(ListaDoblEnl* list);
+void printListaRegistrosVinos(ListaDoblEnl* listaRegistros);
+void printNodoRegistroVino(NodoDobl *rv);
+void printRankingBodegasPerYearAsc(ListaSimpEnl* listaSelecciones, ListaSimpEnl * listVinos, int year);
+void printRankingBodegasPerYearDes(ListaSimpEnl* listaSelecciones, ListaSimpEnl * listVinos, int year);
+void printListaBodegaAsc(ListaDoblEnl* list);
+void printListaBodegaDes(ListaDoblEnl* list);
 
 #endif // REGISTROVINO_H_INCLUDED

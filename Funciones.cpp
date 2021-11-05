@@ -1,12 +1,13 @@
 #include "Funciones.h"
 #include <cstring>
+#include <sstream>
 #include <iostream>
 #include<string>
 
 
 
 using namespace std;
-
+/* Implementacion de Primitivas */
 string eliminarEspaciosDelComienzo(string cadena){
 
     int posComienzo = -1, auxPosComienzo = 0;
@@ -63,7 +64,6 @@ string eliminarEspaciosDelFinal(string cadena){
      char puntoComa = ';';
     char auxCadena[50] = " ";
     string palabra = " ";
-//    cout<< "largoAntes: "<< cadena.length() << endl;
     int i = cadena.length() - 1;
        while(i >= 0){
          if((cadena[i] == espacio) || cadena[i] == tab || cadena[i] == puntoComa){
@@ -91,11 +91,9 @@ string eliminarEspaciosDelFinal(string cadena){
 
        palabra = cadena;
     }
-//    cout<< "largoDespues: "<< palabra.length() << endl;
     return palabra;
 
 
 
 }
-
 

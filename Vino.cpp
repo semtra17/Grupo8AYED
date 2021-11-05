@@ -226,8 +226,8 @@ void setTerroir(Vino *v, string terroir){
 
 //------------------------------------------------------------
 //BUSCADOR
-Vino * findVinoById(ListaSimpEnl* list, string idVino){
-  Nodo* n = list->head;
+Vino * findVinoById(ListaSimpEnl* listaVino, string idVino){
+  Nodo* n = listaVino->head;
   Nodo* temp;
   while (n != NULL) {
     Vino * v = (Vino *)n->data;

@@ -83,7 +83,7 @@ void setTerroir(Vino *v, string terroir);
 //BUSCADOR
 
 
-Vino * findVinoById(ListaSimpEnl* list, string idVino);
+Vino * findVinoById(ListaSimpEnl* listaVino, string idVino);
 
 
 

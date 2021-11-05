@@ -4,6 +4,8 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <algorithm>
+#include <string>
 using namespace std;
 
 
@@ -85,12 +87,12 @@ void* cargarUsuarioConArchivo(string line){
         string aux;
         string palabra;
         int edad = 0;
-
-
+        char espacio = ' ';
 
         stringstream ss(line);
         getline(ss, auxId_usuario, '-');
         id_usuario = eliminarEspaciosDelComienzo(auxId_usuario);
+        id_usuario.erase (std::remove(id_usuario.begin(), id_usuario.end(), espacio), id_usuario.end());
         getline(ss, auxNombrApellido, '-');
         nombrApellido = eliminarEspaciosDelComienzo(auxNombrApellido);
         getline(ss, auxDireccion, '-');
@@ -179,8 +181,6 @@ void setEdad(Usuario * usuario, int edad){
 
 Usuario * findUsuarioById(ListaSimpEnl* list, string idUsuario){
   Nodo* n = list->head;
-
-  idUsuario = idUsuario + " ";
   while (n != NULL) {
     Usuario * u = (Usuario *)n->data;
     if(u->id_usuario == idUsuario){
@@ -211,15 +211,15 @@ void printUsuario(Usuario *u){
 }
 
 void printListaUsuario(ListaSimpEnl* list){
-if(list->head){
-        cout << "Lista vacia" << endl;
+    if(!list->head){
+            cout << "Lista vacia" << endl;
 
-    }else{
-        Nodo* n = list->head;
-        while (n != NULL) {
-            printUsuario((Usuario*)n->data);
-            n = n->nextNode;
+        }else{
+            Nodo* n = list->head;
+            while (n != NULL) {
+                printUsuario((Usuario*)n->data);
+                n = n->nextNode;
+            }
         }
-    }
 
 }

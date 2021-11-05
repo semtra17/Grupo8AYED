@@ -87,7 +87,45 @@ void cargarListaSelDesdeArchivo(ListaSimpEnl* list){
 
 }
 
+//--------------------------------------------------
 
+//DESTRUCTOR
+
+void borrarSeleccionMen(SeleccionMensual* s){
+    delete s;
+}
+void removeSelMenByIdFromList(ListaSimpEnl* list, string idSelecMen){
+
+     Nodo* tempPreviousNode = NULL;
+
+      Nodo* n = list->head;
+        SeleccionMensual * head = (SeleccionMensual *) list->head->data;
+      while (n != NULL) {
+        SeleccionMensual * s = (SeleccionMensual *)n->data;
+        if(head->idSelecMen == idSelecMen){
+            list->head = n->nextNode;
+             cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << endl;
+            cout << "SeleccionMensual id: " << ((SeleccionMensual* )n->data )->idSelecMen << " eliminado" << endl;
+             cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << endl;
+            delete(n);
+            n=NULL;
+        }
+        else if(s->idSelecMen == idSelecMen && head->idSelecMen != idSelecMen){
+
+            tempPreviousNode->nextNode = n->nextNode != NULL ? n->nextNode : NULL;
+             cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << endl;
+            cout << "SeleccionMensual id: " << ((SeleccionMensual* )n->data )->idSelecMen << " eliminado" << endl;
+             cout << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" << endl;
+            delete(n);
+            n=NULL;
+        }
+        if(n!=NULL){
+            tempPreviousNode = n;
+            n = n->nextNode;
+        }
+      }
+
+}
 
 
 //------------------------------------------------------------

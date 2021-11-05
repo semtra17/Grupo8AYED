@@ -2,6 +2,7 @@
 #include "ListaDoblEnl.h"
 #include "ListaSimpEnl.h"
 #include "SeleccionMensual.h"
+#include "Vino.h"
 #include <fstream>
 #include <stdlib.h>
 #include <iostream>
@@ -78,6 +79,9 @@ void ordenarRegistrosAsc(ListaDoblEnl * lr){
     }
 
 
+
+
+
 }
 void ordenarRegistrosDes(ListaDoblEnl * lr){
 
@@ -92,18 +96,22 @@ void ordenarRegistrosDes(ListaDoblEnl * lr){
                 RegistroVino * auxRegVino = nrv;
                 nrs->data = nr->data;
                 nr->data = auxRegVino;
+
             }
+
             nrs = nrs->nextNode;
         }
+
         nr = nr->nextNode;
+
     }
 
 }
 
 
-ListaDoblEnl * rankingVinosPerYear(ListaSimpEnl* list, int year){
+ListaDoblEnl * rankingVinosPerYear(ListaSimpEnl* listaSelecciones, int year){
     ListaDoblEnl* LISTA_REGISTRO_VINO = newListaDoblEnl();
-    Nodo* node = list->head;
+    Nodo* node = listaSelecciones->head;
 
   while(node != NULL){
     SeleccionMensual* seleccionMensual = ( SeleccionMensual*)node->data;
@@ -124,29 +132,31 @@ ListaDoblEnl * rankingVinosPerYear(ListaSimpEnl* list, int year){
 
 
 
-void printRankingVinosPerYearAsc(ListaDoblEnl* list){
-    ordenarRegistrosAsc(list);
+void printRankingVinosPerYearAsc(ListaDoblEnl* listaRegistros){
+    ordenarRegistrosAsc(listaRegistros);
     cout << "==========================" << endl;
     cout << "Ranking de Vinos Ascendente" << endl;
-    NodoDobl* sm = list->head;
+    NodoDobl* sm = listaRegistros->head;
     int i = 1;
     while (sm != NULL) {
         printRegistroVino((RegistroVino*) sm->data);
         cout <<  "Puesto: " << i++ << endl;
+        cout << "Index: " << sm->index << endl;
         sm = sm->nextNode;
     }
 }
-void printRankingVinosPerYearDes(ListaDoblEnl* list){
+void printRankingVinosPerYearDes(ListaDoblEnl* listaRegistros){
 
-    ordenarRegistrosDes(list);
+    ordenarRegistrosDes(listaRegistros);
     cout << "==========================" << endl;
     cout << "Ranking de Vinos Descendente" << endl;
-    NodoDobl* sm = list->head;
-    int i =  list->tam;
+    NodoDobl* sm = listaRegistros->head;
+    int i =  listaRegistros->tam;
     while (sm != NULL) {
 
         printRegistroVino((RegistroVino*) sm->data);
         cout <<  "Puesto: " << i-- << endl;
+        cout << "Index: " << sm->index << endl;
         sm = sm->nextNode;
     }
 }
@@ -158,15 +168,87 @@ void printRegistroVino(RegistroVino *rv){
     cout <<  "idVino: " << getIdRegistroVino(rv) << endl;
     cout << "Cantidad: " << getCantidadRegistroVino(rv) << endl;
 }
+void printNodoRegistroVino(NodoDobl *rv){
+    printRegistroVino((RegistroVino *) rv->data);
+    cout << "Index: " << rv->index << endl;
+}
 
 void printListaRegistrosVinos(ListaDoblEnl* list){
 
        NodoDobl* sm = list->head;
         while (sm != NULL) {
             printRegistroVino((RegistroVino*) sm->data);
+            cout << "Index: " << sm->index << endl;
             sm = sm->nextNode;
     }
 
 }
+
+
+void printRankingBodegasPerYearAsc(ListaSimpEnl* listaSelecciones, ListaSimpEnl * listVinos, int year){
+  ListaDoblEnl * lrv = rankingVinosPerYear(listaSelecciones,year);
+  ordenarRegistrosAsc(lrv);
+  ListaDoblEnl* listaBodega = newListaDoblEnl();
+  NodoDobl* node = lrv->head;
+
+  while(node != NULL){
+    RegistroVino * v1 = (RegistroVino *)node->data;
+    Vino * v = findVinoById(listVinos,v1->idRegistroVino);
+
+    addDataToListDoblEnl(listaBodega, &v->bodega );
+
+    node = node->nextNode;
+  }
+    cout << "==========================" << endl;
+    cout << "Ranking de Bodegas Ascendente" << endl;
+    printListaBodegaAsc(listaBodega);
+}
+
+
+
+void printRankingBodegasPerYearDes(ListaSimpEnl* listaSelecciones,ListaSimpEnl * listVinos, int year){
+  ListaDoblEnl * lrv = rankingVinosPerYear(listaSelecciones,year);
+  ordenarRegistrosDes(lrv);
+  ListaDoblEnl* listaBodega = newListaDoblEnl();
+  NodoDobl* node = lrv->head;
+
+  while(node != NULL){
+    RegistroVino * v1 = (RegistroVino *)node->data;
+    Vino * v = findVinoById(listVinos,v1->idRegistroVino);
+    addDataToListDoblEnl(listaBodega, &v->bodega );
+
+    node = node->nextNode;
+  }
+    cout << "==========================" << endl;
+    cout << "Ranking de Bodegas Ascendente" << endl;
+    printListaBodegaDes(listaBodega);
+}
+
+
+
+void printListaBodegaAsc(ListaDoblEnl* list){
+    NodoDobl* sm = list->head;
+     int i = 1;
+    while (sm != NULL) {
+        cout << "Bodega: " << *((string*) sm->data)  << endl;
+        cout << "Puesto: " << i++ << endl;
+        sm = sm->nextNode;
+         cout << "---------------------------" << endl;
+    }
+}
+void printListaBodegaDes(ListaDoblEnl* list){
+    NodoDobl* sm = list->head;
+    int i = list->tam;
+    while (sm != NULL) {
+        cout << "Bodega: " << *((string*) sm->data)  << endl;
+        cout << "Puesto: " << i-- << endl;
+        sm = sm->nextNode;
+        cout << "---------------------------" << endl;
+    }
+}
+
+
+
+
 
 
