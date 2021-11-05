@@ -98,6 +98,25 @@ void printListaRankingPerVarietales(ListaRankingPerVarietales* list){
     }
 }
 
+void ordenarListaRankingPerVarietalDesc(ListaRankingPerVarietales * lr){
+
+    NodoRankingPerVarietal * nr = lr->primerNodo;
+    while(nr != NULL){
+    NodoRankingPerVarietal * nrs = nr->siguienteNodo;
+
+        while(nrs != NULL){
+            if(nr->itemRankingPerVarietal->cantidad < nrs->itemRankingPerVarietal->cantidad){
+                ItemRankingPerVarietal * auxNodoRankingPerVarietal = nrs->itemRankingPerVarietal;
+                nrs->itemRankingPerVarietal = nr->itemRankingPerVarietal;
+                nr->itemRankingPerVarietal = auxNodoRankingPerVarietal;
+            }
+            nrs = nrs->siguienteNodo;
+        }
+        nr = nr->siguienteNodo;
+    }
+
+}
+
 void rankingVinosPerVarietal(ListaSelecciones* listaSelecciones, ListaVinos* listaVinos){
     ListaRankingPerVarietales* rankingVinosJovenes = newListaRankingPerVarietales();
     ListaRankingPerVarietales* rankingVinosMedianos = newListaRankingPerVarietales();
@@ -117,11 +136,9 @@ void rankingVinosPerVarietal(ListaSelecciones* listaSelecciones, ListaVinos* lis
             int edad = 2021 - anioCosecha;
             if(edad < 30){
                 contarVinoPerVarietal(rankingVinosJovenes, vino);
-                //cout << "chico" << endl;
             }
             if(edad >30 && edad < 50){
                 contarVinoPerVarietal(rankingVinosMedianos, vino);
-                cout << "mediano" << endl;
             }
             if(edad > 50){
                 contarVinoPerVarietal(rankingVinosViejos, vino);
@@ -130,13 +147,17 @@ void rankingVinosPerVarietal(ListaSelecciones* listaSelecciones, ListaVinos* lis
         }
 
         currentNode = currentNode->sigSeleccion;
-        //recorrer la lista
-        //busca el vino en el catalogo
-        //checkear la edad
-        //crear el nodo y ponerlo en la lista que corresponde
-        //ordenar las tres listas
     }
+    ordenarListaRankingPerVarietalDesc(rankingVinosJovenes);
+    ordenarListaRankingPerVarietalDesc(rankingVinosMedianos);
+    ordenarListaRankingPerVarietalDesc(rankingVinosViejos);
+
+    cout << "VINOS MENORES A 30 AÑOS" << endl;
     printListaRankingPerVarietales(rankingVinosJovenes);
+
+    cout << "VINOS MAYORES A 30 AÑOS Y MENORES QUE 50" << endl;
     printListaRankingPerVarietales(rankingVinosMedianos);
+
+    cout << "VINOS MAYORES A 50 AÑOS" << endl;
     printListaRankingPerVarietales(rankingVinosViejos);
 }
