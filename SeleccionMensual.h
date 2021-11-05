@@ -3,8 +3,31 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
+#include "ListaSimpEnl.h"
 
 using namespace std;
+
+/**
+    Definición del Tipo de Dato para manejo de Usuario.
+    Atributos:
+    * idSelecMen,
+    * mes,
+    * anio,
+    * idsVinos,
+
+
+    Axiomas:
+    * idSelecMen = string,
+    * mes= string,
+    * idsVinos= string[],
+    * anio = int,
+
+*/
+
+/******************************************************************************/
+/* Definiciones de Tipos de Datos */
+/*--------------------------------*/
+/*--------------------------------*/
 
 struct SeleccionMensual{
     std::string idSelecMen;
@@ -29,6 +52,19 @@ SeleccionMensual * crearSeleccionMensual(string idSelecMen, string mes, int anio
 //POST: mes, anio, idsVinos[] seran asignados a cada atributo de SeleccionMensual
 SeleccionMensual * crearSeleccionMensual( string mes, int anio, string idsVinos[6]);
 
+//PRE: line debe entrar por parametro
+//POST: puntero a void sera devuelto
+//SeleccionMensual* sera cargado a partir de una linea de archivo de texto
+// El mismo sera devuelto como un puntero a void
+void* cargarSelMenConArchivo(string line);
+
+//PRE: Lista previamente instanciada
+//POST: Lista cargada a partir de archivo
+//Lista cargada con nodos que contienen struct SeleccionMensual
+void cargarListaSelDesdeArchivo(ListaSimpEnl* list);
+
+
+
 
 //---------------------------------------------------------------------
 //DESTRUCTOR
@@ -37,6 +73,11 @@ SeleccionMensual * crearSeleccionMensual( string mes, int anio, string idsVinos[
 //POST: se libera el espacio de memoria ocupado por SeleccionMensual *s
 
 void borrarSeleccionMen(SeleccionMensual* s);
+
+
+//PRE: Lista debe estar cargada y el idSelec debe existir en al lista
+//POST Remueve SeleccionMensual* hallada en la lista
+void removeSelMenByIdFromList(ListaSimpEnl* list, string idSelec);
 
 //GETS
 
@@ -60,6 +101,17 @@ void setMesSelecMen(SeleccionMensual *s, string mes);
 void setAnioSelecMen(SeleccionMensual *s,int anio);
 void setIdsVinos(SeleccionMensual *s,string idsVinos[6]);
 
+
+//------------------------------------------------------
+//BUSCADOR
+
+//PRE: Lista debe estar cargada y el idSelec debe existir en al lista
+//POST Devuelve SeleccionMensual* hallada en la lista
+
+SeleccionMensual * findSelecMenById(ListaSimpEnl* list, string idSelec);
+
+
+
 //UTILIDADES
 
 //PRE: "s" debe estar previamente cargado
@@ -70,6 +122,10 @@ void printSelecMen(SeleccionMensual *s);
 //PRE: "idsVinos" debe estar previamente cargado
 //POST muestra por pantalla los ids alojados en el arreglo de string
 void printIdsVinos(string idsVinos[6]);
+
+//PRE: Lista cargada
+//POST Imprime por pantalla datos pertenecientes a la lista
+void printListaSelecMen(ListaSimpEnl* list);
 
 
 #endif // SELECCIONMENSUAL_H_INCLUDED

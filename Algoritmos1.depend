@@ -149,3 +149,314 @@
 1633045839 c:\users\luciano\desktop\algoritmos1\listaselecciones.h
 	"SeleccionMensual.h"
 
+1635942039 source:c:\myprojects\grupo8ayed\bodega.cpp
+
+1635957537 source:c:\myprojects\grupo8ayed\funciones.cpp
+	"Funciones.h"
+	<cstring>
+	<iostream>
+	<string>
+
+1635957528 c:\myprojects\grupo8ayed\funciones.h
+	<string>
+
+1635957644 source:c:\myprojects\grupo8ayed\listaselecciones.cpp
+	"Funciones.h"
+	"ListaSelecciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"SeleccionMensual.h"
+
+1635942039 c:\myprojects\grupo8ayed\listaselecciones.h
+	"SeleccionMensual.h"
+
+1635996151 c:\myprojects\grupo8ayed\seleccionmensual.h
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSimpEnl.h"
+
+1635953040 source:c:\myprojects\grupo8ayed\listausuario.cpp
+	"ListaUsuario.h"
+	"Funciones.h"
+	"Usuario.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1635942039 c:\myprojects\grupo8ayed\listausuario.h
+	"Usuario.h"
+
+1635953538 c:\myprojects\grupo8ayed\usuario.h
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSimpEnl.h"
+
+1635957676 source:c:\myprojects\grupo8ayed\listavinos.cpp
+	"Vino.h"
+	"ListaVinos.h"
+	"Funciones.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	<stdio.h>
+	<string.h>
+	<string>
+
+1635957026 c:\myprojects\grupo8ayed\vino.h
+	<string>
+	"ListaSimpEnl.h"
+
+1635942039 c:\myprojects\grupo8ayed\listavinos.h
+	"Vino.h"
+
+1636054990 source:c:\myprojects\grupo8ayed\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	"Lista.h"
+	<sstream>
+	"Funciones.h"
+	"ListaSimpEnl.h"
+	"ListaDoblEnl.h"
+	"Vino.h"
+	"Usuario.h"
+	"RegistroVino.h"
+	"SeleccionMensual.h"
+
+1635947912 c:\myprojects\grupo8ayed\lista.h
+
+1635997309 source:c:\myprojects\grupo8ayed\seleccionmensual.cpp
+	"SeleccionMensual.h"
+	"Funciones.h"
+	<iostream>
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+
+1635999525 source:c:\myprojects\grupo8ayed\usuario.cpp
+	"Usuario.h"
+	"ListaSimpEnl.h"
+	"Funciones.h"
+	<iostream>
+	<sstream>
+	<fstream>
+
+1635996886 source:c:\myprojects\grupo8ayed\vino.cpp
+	"Vino.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	<fstream>
+	<sstream>
+	"Funciones.h"
+	"ListaSimpEnl.h"
+
+1635948154 source:c:\myprojects\grupo8ayed\listasimpenl.cpp
+	"ListaSimpEnl.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+
+1635948150 c:\myprojects\grupo8ayed\listasimpenl.h
+
+1635951989 source:c:\myprojects\grupo8ayed\lista.cpp
+	"Lista.h"
+	<iostream>
+
+1635999417 source:c:\myprojects\grupo8ayed\listadoblenl.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+	"ListaDoblEnl.h"
+
+1635999317 c:\myprojects\grupo8ayed\listadoblenl.h
+
+1636055751 source:c:\myprojects\grupo8ayed\registrovino.cpp
+	"RegistroVino.h"
+	"ListaDoblEnl.h"
+	"ListaSimpEnl.h"
+	"SeleccionMensual.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1636055788 c:\myprojects\grupo8ayed\registrovino.h
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	"ListaDoblEnl.h"
+	"ListaSimpEnl.h"
+
+1636080513 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\bodega.cpp
+
+1636134190 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\funciones.cpp
+	"Funciones.h"
+	<cstring>
+	<sstream>
+	<iostream>
+	<string>
+
+1636134170 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\funciones.h
+	<string>
+
+1636080513 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\lista.cpp
+	"Lista.h"
+	<iostream>
+
+1636080513 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\lista.h
+
+1636133194 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\listadoblenl.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+	"ListaDoblEnl.h"
+
+1636133964 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\listadoblenl.h
+
+1636133147 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\listasimpenl.cpp
+	"ListaSimpEnl.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+
+1636133621 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\listasimpenl.h
+
+1636124356 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\registrovino.cpp
+	"RegistroVino.h"
+	"ListaDoblEnl.h"
+	"ListaSimpEnl.h"
+	"SeleccionMensual.h"
+	"Vino.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+
+1636139858 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\registrovino.h
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	"ListaDoblEnl.h"
+	"ListaSimpEnl.h"
+
+1636138088 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\seleccionmensual.h
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSimpEnl.h"
+
+1636084339 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\seleccionmensual.cpp
+	"SeleccionMensual.h"
+	"Funciones.h"
+	<iostream>
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+
+1636081380 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\usuario.cpp
+	"Usuario.h"
+	"ListaSimpEnl.h"
+	"Funciones.h"
+	<iostream>
+	<sstream>
+	<fstream>
+	<algorithm>
+	<string>
+
+1636139522 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\usuario.h
+	<stdio.h>
+	<string.h>
+	<string>
+	"ListaSimpEnl.h"
+
+1636120745 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\vino.cpp
+	"Vino.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+	<fstream>
+	<sstream>
+	"Funciones.h"
+	"ListaSimpEnl.h"
+
+1636139570 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\vino.h
+	<string>
+	"ListaSimpEnl.h"
+
+1636134899 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<string.h>
+	<sstream>
+	"Funciones.h"
+	"ListaSimpEnl.h"
+	"ListaDoblEnl.h"
+	"Vino.h"
+	"Usuario.h"
+	"RegistroVino.h"
+	"SeleccionMensual.h"
+	"ItemRankingPerVarietal.h"
+	"Menu.h"
+
+1636134767 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\menu.cpp
+	"Menu.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<stdio.h>
+	"SeleccionMensual.h"
+	"Usuario.h"
+	"Vino.h"
+	"RegistroVino.h"
+	"ItemRankingPerVarietal.h"
+	<sstream>
+	"Funciones.h"
+
+1636134748 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\menu.h
+	"ListaDoblEnl.h"
+
+1636139721 source:e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\itemrankingpervarietal.cpp
+	"ItemRankingPerVarietal.h"
+	<fstream>
+	<stdlib.h>
+	<iostream>
+	<sstream>
+	"ListaDoblEnl.h"
+	"ListaSimpEnl.h"
+	"SeleccionMensual.h"
+	"Vino.h"
+
+1636140133 e:\luciano\facultad\algoritmos y estructuras\ramas\listasvoid\grupo8ayed\itemrankingpervarietal.h
+	"ItemRankingPerVarietal.h"
+	"ListaSimpEnl.h"
+	"ListaDoblEnl.h"
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<string.h>
+
