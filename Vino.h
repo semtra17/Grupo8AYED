@@ -3,6 +3,34 @@
 #include <string>
 #include "ListaSimpEnl.h"
 using namespace std;
+
+
+
+/**
+    Definición del Tipo de Dato para manejo de Vino.
+    Atributos:
+    * idVino,
+    * etiqueta,
+    * bodega,
+    * segmentoDelVino,
+    * varietal,
+    * anioCosecha,
+    * terroir,
+
+    Axiomas:
+    * idVino = identificador del Vino,
+    * etiqueta= Etiqueta del vino,
+    * bodega= Bodega del Vino,
+    * segmentoDelVino = Segmento del vino,
+    * varietal = tipo,
+    * anioCosecha = año de cosecha,
+    * terroir = Tipo de terroir,
+*/
+
+/******************************************************************************/
+/* Definiciones de Tipos de Datos */
+/*--------------------------------*/
+/*--------------------------------*/
 struct Vino{
 
     std::string idVino;
@@ -33,9 +61,15 @@ Vino *crearVino(string idVino, string etiqueta, string bodega, string segmentoDe
 Vino *crearVino(string etiqueta, string bodega, string segmentoDelVino, string varietal, string anioCosecha, string terroir);
 
 
-
+//POST: puntero a void sera devuelto
+//Vino* sera cargado a partir de una linea de archivo de texto
+// El mismo sera devuelto como un puntero a void
 
 void* cargarVinoConArchivo(string line);
+
+//PRE: Lista previamente instanciada
+//POST: Lista cargada a partir de archivo
+//Lista cargada con nodos que contienen struct Vino
 void cargarListaVinoDesdeArchivo(ListaSimpEnl* list);
 
 //---------------------------------------------------------------------
@@ -45,6 +79,8 @@ void cargarListaVinoDesdeArchivo(ListaSimpEnl* list);
 //POST: se libera el espacio de la memoria del Vino* v
 void borrarVino(Vino *v);
 
+//PRE: Lista debe estar cargada y el idVino debe existir en al lista
+//POST Remueve Vino* hallada en la lista
 void removeVinoByIdFromList(ListaSimpEnl* list, string idVino);
 
 
@@ -83,6 +119,8 @@ void setTerroir(Vino *v, string terroir);
 //BUSCADOR
 
 
+//PRE: Lista debe estar cargada y el idVino debe existir en al lista
+//POST Devuelve Vino* hallado en la lista
 Vino * findVinoById(ListaSimpEnl* listaVino, string idVino);
 
 

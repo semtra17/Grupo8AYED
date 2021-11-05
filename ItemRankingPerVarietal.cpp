@@ -7,6 +7,8 @@
 #include "ListaSimpEnl.h"
 #include "SeleccionMensual.h"
 #include "Vino.h"
+//------------------------------------------------------------
+//CONSTUCTOR
 
 ItemRankingPerVarietal * crearItemRankingPerVarietal(string nombre, int cantidad){
     ItemRankingPerVarietal *item = new ItemRankingPerVarietal();
@@ -14,21 +16,33 @@ ItemRankingPerVarietal * crearItemRankingPerVarietal(string nombre, int cantidad
     item->cantidad = cantidad;
     return item;
 }
+//------------------------------------------------------------
+//GETS
+
 string getNameItemRankingPerVarietal(ItemRankingPerVarietal* i){
     return i->nombre;
 }
 int getCantidadItemRankingPerVarietal(ItemRankingPerVarietal* i){
     return i->cantidad;
 }
+
+//------------------------------------------------------------
+//SETS
+
 void setNameItemRankingPerVarietal(ItemRankingPerVarietal* i, string name){
     i->nombre = name;
 }
 void setCantidadItemRankingPerVarietal(ItemRankingPerVarietal* i, int cantidad){
     i->cantidad = cantidad;
 }
+//------------------------------------------------------------
+//DESTRUCTOR
+
 void eliminarItemRankingPerVarietal(ItemRankingPerVarietal *i){
     delete(i);
 }
+//------------------------------------------------------------
+//BUSCADOR
 
 NodoDobl* buscarRegistroVinoPorIdConListaVarietal(ListaDoblEnl* list, string idVino){
     NodoDobl* n = list->head;
@@ -43,6 +57,8 @@ NodoDobl* buscarRegistroVinoPorIdConListaVarietal(ListaDoblEnl* list, string idV
     return temp;
 }
 
+//------------------------------------------------------------
+//BUSQUEDA _ CONTEO
 
 void contarVinoPerVarietal(ListaDoblEnl* list, Vino* vino){
     NodoDobl* nodoItemRankingPerVarietal = buscarRegistroVinoPorIdConListaVarietal(list, vino->idVino);
@@ -54,6 +70,8 @@ void contarVinoPerVarietal(ListaDoblEnl* list, Vino* vino){
     }
 }
 
+//------------------------------------------------------------
+//ORDENAMIENTO
 
 
 void ordenarListaRankingPerVarietalDesc(ListaDoblEnl * lr){
@@ -208,6 +226,8 @@ void rankingVinosMedianosPerVarietal(ListaSimpEnl* listaSelecciones, ListaSimpEn
 
 }
 
+//------------------------------------------------------------
+//UTILIDADES
 
 
 void printNodoRankingPerVarietal(NodoDobl *nr){

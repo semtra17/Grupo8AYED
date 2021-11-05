@@ -34,6 +34,8 @@
 		</Compiler>
 		<Unit filename="Funciones.cpp" />
 		<Unit filename="Funciones.h" />
+		<Unit filename="ItemRankingPerVarietal.cpp" />
+		<Unit filename="ItemRankingPerVarietal.h" />
 		<Unit filename="ListaDoblEnl.cpp" />
 		<Unit filename="ListaDoblEnl.h" />
 		<Unit filename="ListaSimpEnl.cpp" />
