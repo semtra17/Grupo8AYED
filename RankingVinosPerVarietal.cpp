@@ -43,7 +43,7 @@ void linkToNext2(NodoRankingPerVarietal* currentNode, NodoRankingPerVarietal* no
 		currentNode->siguienteNodo = nodeToAdd;
 		nodeToAdd->anteriorNodo = currentNode;
 	}else{
-	 	linkToNext(currentNode->siguienteNodo, nodeToAdd);
+	 	linkToNext2(currentNode->siguienteNodo, nodeToAdd);
 	}
 }
 
@@ -55,13 +55,25 @@ void addNodeToList(ListaRankingPerVarietales* list, NodoRankingPerVarietal* node
   }else{
     linkToNext2(list->primerNodo, nodeToAdd);
     list->ultimoNodo = nodeToAdd;
-    list->tamanio++;
+    list->size++;
   }
 }
 
 void agregarItemRankingPerVarietal(ListaRankingPerVarietales* list, Vino* vino){
-  NodoRankingPerVarietal* nuevoNodoRankingPerVarietal = newNodoRankingPerVarietal(vino->idVino);
+  NodoRankingPerVarietal* nuevoNodoRankingPerVarietal = newNodoRankingPerVarietal(vino);
   addNodeToList(list, nuevoNodoRankingPerVarietal);
+}
+
+NodoRankingPerVarietal* buscarRegistroVinoPorId(ListaRankingPerVarietales* list, string idVino){
+    NodoRankingPerVarietal* n = list->primerNodo;
+    NodoRankingPerVarietal* temp = NULL;
+    while (n != NULL) {
+      if(n->itemRankingPerVarietal->nombre == idVino){
+        temp = n;
+      }
+      n = n->siguienteNodo;
+    }
+    return temp;
 }
 
 void contarVinoPerVarietal(ListaRankingPerVarietales* list, Vino* vino){
@@ -73,22 +85,23 @@ void contarVinoPerVarietal(ListaRankingPerVarietales* list, Vino* vino){
     }
 }
 
-NodoRegistroVino* buscarRegistroVinoPorId(ListaRankingPerVarietales* list, string idVino){
-    NodoRankingPerVarietal* n = list->primerNodo;
-    NodoRankingPerVarietal* temp = NULL;
-    while (n != NULL) {
-      if(n->itemRankingPerVarietal->nombre) == idVino){
-        temp = n;
-      }
-      n = n->siguienteNodo;
+void printNodoRankingPerVarietal(NodoRankingPerVarietal *nr){
+   printItemRankingPerVarietal(nr->itemRankingPerVarietal);
+}
+
+void printListaRankingPerVarietales(ListaRankingPerVarietales* list){
+
+   NodoRankingPerVarietal* sm = list->primerNodo;
+    while (sm != NULL) {
+        printNodoRankingPerVarietal(sm);
+        sm = sm->siguienteNodo;
     }
-    return temp;
 }
 
 void rankingVinosPerVarietal(ListaSelecciones* listaSelecciones, ListaVinos* listaVinos){
     ListaRankingPerVarietales* rankingVinosJovenes = newListaRankingPerVarietales();
-    //ListaRankingPerVarietales* rankingVinosMedianos = newListaRankingPerVarietales();
-    //ListaRankingPerVarietales* rankingVinosViejos = newListaRankingPerVarietales();
+    ListaRankingPerVarietales* rankingVinosMedianos = newListaRankingPerVarietales();
+    ListaRankingPerVarietales* rankingVinosViejos = newListaRankingPerVarietales();
 
 
     NodoSeleccion* currentNode = listaSelecciones->primerSeleccion;
@@ -104,12 +117,14 @@ void rankingVinosPerVarietal(ListaSelecciones* listaSelecciones, ListaVinos* lis
             int edad = 2021 - anioCosecha;
             if(edad < 30){
                 contarVinoPerVarietal(rankingVinosJovenes, vino);
-                cout << "chico" << endl;
+                //cout << "chico" << endl;
             }
             if(edad >30 && edad < 50){
+                contarVinoPerVarietal(rankingVinosMedianos, vino);
                 cout << "mediano" << endl;
             }
             if(edad > 50){
+                contarVinoPerVarietal(rankingVinosViejos, vino);
                 cout << "grande" << endl;
             }
         }
@@ -121,5 +136,7 @@ void rankingVinosPerVarietal(ListaSelecciones* listaSelecciones, ListaVinos* lis
         //crear el nodo y ponerlo en la lista que corresponde
         //ordenar las tres listas
     }
-
+    printListaRankingPerVarietales(rankingVinosJovenes);
+    printListaRankingPerVarietales(rankingVinosMedianos);
+    printListaRankingPerVarietales(rankingVinosViejos);
 }

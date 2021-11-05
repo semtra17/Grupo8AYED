@@ -195,7 +195,8 @@ void printListaRegistrosVinos(ListaRegistroVino* list){
     while (sm != NULL) {
         printNodoRegistroVino(sm);
         sm = sm->SiguienteNodoRegistroVino;
-    }}
+    }
+}
 
 
 void printNodoRegistroVino(NodoRegistroVino *nr){
